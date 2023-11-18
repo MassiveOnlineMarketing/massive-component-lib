@@ -18,9 +18,9 @@ import { MassiveLogoColor } from '@/assets/branding'
 import Link from 'next/link'
 
 const navigation = [
-    { name: 'Accordion', href: 'https://youtu.be/dQw4w9WgXcQ?si=xCbgn5-qF2Sp2PFl', icon: HomeIcon, current: true },
-    { name: 'Tabs', href: 'https://youtu.be/dQw4w9WgXcQ?si=xCbgn5-qF2Sp2PFl', icon: UsersIcon, current: false },
-    { name: 'Typography', href: 'https://youtu.be/dQw4w9WgXcQ?si=xCbgn5-qF2Sp2PFl', icon: FolderIcon, current: false },
+    { name: 'Accordion', href: '/accordion', icon: HomeIcon, current: true },
+    { name: 'Tabs', href: '/tabs', icon: UsersIcon, current: false },
+    { name: 'Typography', href: '/typography', icon: FolderIcon, current: false },
     // { name: 'Calendar', href: 'https://youtu.be/dQw4w9WgXcQ?si=xCbgn5-qF2Sp2PFl', icon: CalendarIcon, current: false },
     // { name: 'Documents', href: 'https://youtu.be/dQw4w9WgXcQ?si=xCbgn5-qF2Sp2PFl', icon: DocumentDuplicateIcon, current: false },
     // { name: 'Reports', href: 'https://youtu.be/dQw4w9WgXcQ?si=xCbgn5-qF2Sp2PFl', icon: ChartPieIcon, current: false },
@@ -244,8 +244,8 @@ export default function SidebarLayout1({ children } : { children: React.ReactNod
                     <div className="flex-1 text-sm font-semibold leading-6 text-white">Geke UI Liba neef</div>
                 </div>
 
-                <main className="py-10 ">
-                    <div className="px-4 sm:px-6 lg:px-8">{ children }</div>
+                <main className="w-full">
+                    <div className="w-full py-8">{ children }</div>
                 </main>
             </div>
         </>
