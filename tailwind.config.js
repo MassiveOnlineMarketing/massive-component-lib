@@ -1,3 +1,5 @@
+const typographyPlugin = require('@tailwindcss/typography')
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
@@ -32,5 +34,19 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    typographyPlugin,
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.text-gradient-primary': {
+          background: 'var(--Cool, linear-gradient(90deg, #6366F1 0%, #9756FF 100%, #8B5CF6 100%))',
+          'background-clip': 'text',
+          '-webkit-background-clip': 'text',
+          '-webkit-text-fill-color': 'transparent',
+        }
+      }
+      addUtilities(newUtilities, [ 'responsive', 'hover', 'group-hover'])
+    },
+    require("tailwindcss-animate")
+  ],
 }
