@@ -11,6 +11,7 @@ import { formSchema } from '@/lib/data-schema/form';
 import { submitForm } from '@/lib/actions/submit-form';
 import { WebDesignStep } from './steps/WebDesignStep';
 import { Button } from '@/components/ui/button';
+import { ContactStap } from './steps/Contact';
 
 type Inputs = z.infer<typeof formSchema>;
 
@@ -124,7 +125,7 @@ export const ReactHookFormZod = () => {
             <Heading level='h3' size='xl' colorScheme='accent'>In welke Dienst bent u geïnteresseerd?</Heading>
             <form
                 onSubmit={handleSubmit(processForm)}
-                className='flex flex-col space-y-4 pt-8
+                className='flex flex-col gap-4 pt-8
                 
                 max-w-[440px]'
             >
@@ -184,42 +185,7 @@ export const ReactHookFormZod = () => {
                 {/* STEP THREE */}
                 {currentStep === "contactDetails" &&
                     <>
-                        <Heading level='h3' size='xl' colorScheme='accent'>Contact Gegevens</Heading>
-                        <input
-                            className='inline-flex justify-between  py-4 px-8 rounded-xl border border-gray-200'
-                            placeholder="Uw naam..."
-                            {...register("name")}
-                        />
-                        {errors.name?.message && (
-                            // use the message from the hook
-                            <p className='text-red-500'>{errors.name.message}</p>
-                        )}
-
-
-                        <input
-                            className='inline-flex justify-between  py-4 px-8 rounded-xl border border-gray-200'
-                            placeholder="Uw email..."
-                            {...register("email")}
-                        />
-                        {errors.email?.message && (
-                            <p className='text-red-500'>{errors.email.message}</p>
-                        )}
-
-
-                        <input
-                            className='inline-flex justify-between  py-4 px-8 rounded-xl border border-gray-200'
-                            placeholder="Uw website url..."
-                            defaultValue={websiteURL || ''}
-                            {...register("websiteURL")}
-                        />
-                        <input
-                            className='inline-flex justify-between  py-4 px-8 rounded-xl border border-gray-200'
-                            placeholder="Uw bericht..."
-                            {...register("message")}
-                        />
-                        {errors.message?.message && (
-                            <p className='text-red-500'>{errors.message.message}</p>
-                        )}
+                        <ContactStap register={register} watch={watch} errors={errors} websiteURL={websiteURL || ''}/>
                     </>
                 }
 

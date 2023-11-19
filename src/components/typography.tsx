@@ -53,6 +53,7 @@ export const headingVariants = cva(
                 default: "text-gray-900 dark:text-gray-100",
                 muted: "text-gray-600 dark:text-gray-400",
                 accent: "text-indigo-600 dark:text-indigo-400",
+                donker: "text-[#1F2937]"
             },
         },
     }
