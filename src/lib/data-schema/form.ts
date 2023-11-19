@@ -14,7 +14,7 @@ export const formSchema = z.object({
 
 
     // Contact gegevens
-    // name: z.string().min(1, { message: 'Name is required' }),
-    // email: z.string().min(4,{ message: 'Een Email adress is verplicht ' } ).email({ message: 'Geen geldige email adress' }),
-    // message: z.string().min(6, { message: 'Message must be at least 6 characters' }),
+    name: z.string().optional(),
+    email: z.string().optional(),
+    message: z.string().optional(),
 })

@@ -30,6 +30,9 @@ export const ReactHookFormZod = () => {
         resolver: zodResolver(formSchema),
     });
 
+    // store the website url 
+    const websiteURL = watch('websiteURL');
+
     
     
     // Handling the next step
@@ -182,7 +185,41 @@ export const ReactHookFormZod = () => {
                 {currentStep === "contactDetails" &&
                     <>
                         <Heading level='h3' size='xl' colorScheme='accent'>Contact Gegevens</Heading>
-                        
+                        <input
+                            className='inline-flex justify-between  py-4 px-8 rounded-xl border border-gray-200'
+                            placeholder="Uw naam..."
+                            {...register("name")}
+                        />
+                        {errors.name?.message && (
+                            // use the message from the hook
+                            <p className='text-red-500'>{errors.name.message}</p>
+                        )}
+
+
+                        <input
+                            className='inline-flex justify-between  py-4 px-8 rounded-xl border border-gray-200'
+                            placeholder="Uw email..."
+                            {...register("email")}
+                        />
+                        {errors.email?.message && (
+                            <p className='text-red-500'>{errors.email.message}</p>
+                        )}
+
+
+                        <input
+                            className='inline-flex justify-between  py-4 px-8 rounded-xl border border-gray-200'
+                            placeholder="Uw website url..."
+                            defaultValue={websiteURL || ''}
+                            {...register("websiteURL")}
+                        />
+                        <input
+                            className='inline-flex justify-between  py-4 px-8 rounded-xl border border-gray-200'
+                            placeholder="Uw bericht..."
+                            {...register("message")}
+                        />
+                        {errors.message?.message && (
+                            <p className='text-red-500'>{errors.message.message}</p>
+                        )}
                     </>
                 }
 
