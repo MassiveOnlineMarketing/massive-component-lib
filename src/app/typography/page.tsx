@@ -4,7 +4,7 @@ const page = () => {
   return (
     <div className="flex flex-col justify-center items-center h-full">
       <div>
-        <Heading level="h1" size="5xl" colorScheme="accent" className="" highlight="voorbeeld" colorSchemeHighlight="muted">{ HEADING_TEXT }</Heading>
+        <Heading level="h1" size="5xl" colorScheme="accent" className="" highlight="voorbeeld" colorSchemeHighlight="default">{ HEADING_TEXT }</Heading>
         <Heading level="h2" size="4xl" colorScheme="muted" className="" >{ HEADING_TEXT }</Heading>
         <Heading level="h3" size="3xl" colorScheme="default" className="">{ HEADING_TEXT }</Heading>
         <Heading level="h4" size="2xl" colorScheme="accent" className="">{ HEADING_TEXT }</Heading>

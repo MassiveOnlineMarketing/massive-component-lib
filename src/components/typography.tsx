@@ -20,7 +20,7 @@ export type HeadingWithHighlightProps = HeadingProps & HighlightProps;
 
 
 // Types for SubHeading
-type SubHeadingProps = VariantProps<typeof subHeadingVariants> &
+export type SubHeadingProps = VariantProps<typeof subHeadingVariants> &
     React.ComponentPropsWithoutRef<"h1"> &
 {
     level: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";

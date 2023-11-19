@@ -23,19 +23,6 @@ export default function Home() {
         Internal Anchor
       </InternalAnchor>
 
-      {/* <Card>
-        <Cardo.title colorScheme="primary" size="4xl"> TITLE </Cardo.title>
-        <Cardo.image> IMAGE </Cardo.image>
-        <Cardo.body> BODY </Cardo.body>
-        <Cardo.footer> FOOTER </Cardo.footer>
-      </Card> */}
-
-      {/* <TitleTypography>
-        <Subtitle size=""></Subtitle>
-        <Title></Title>
-        <Text></Text>
-      </TitleTypography> */}
-
     </main>
     // <AcademicCapIcon className='h-4 w-4 mr-2' />
   );

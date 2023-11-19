@@ -21,7 +21,7 @@ const navigation = [
     { name: 'Accordion', href: '/accordion', icon: HomeIcon, current: true },
     { name: 'Tabs', href: '/tabs', icon: UsersIcon, current: false },
     { name: 'Typography', href: '/typography', icon: FolderIcon, current: false },
-    // { name: 'Calendar', href: 'https://youtu.be/dQw4w9WgXcQ?si=xCbgn5-qF2Sp2PFl', icon: CalendarIcon, current: false },
+    { name: 'Form', href: '/form', icon: CalendarIcon, current: false },
     // { name: 'Documents', href: 'https://youtu.be/dQw4w9WgXcQ?si=xCbgn5-qF2Sp2PFl', icon: DocumentDuplicateIcon, current: false },
     // { name: 'Reports', href: 'https://youtu.be/dQw4w9WgXcQ?si=xCbgn5-qF2Sp2PFl', icon: ChartPieIcon, current: false },
 ]
