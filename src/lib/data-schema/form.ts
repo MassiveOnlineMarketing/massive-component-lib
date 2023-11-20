@@ -14,6 +14,8 @@ export const formSchema = z.object({
 
 
     // Contact gegevens
+    tijdlijn: z.string().optional(),
+    budget: z.string().optional(),
     name: z.string().optional(),
     email: z.string().optional(),
     message: z.string().optional(),

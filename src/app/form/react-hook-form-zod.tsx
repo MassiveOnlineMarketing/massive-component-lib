@@ -29,6 +29,11 @@ export const ReactHookFormZod = () => {
         formState: { errors },
     } = useForm<Inputs>({
         resolver: zodResolver(formSchema),
+        defaultValues: {
+            name: '',
+            email: '',
+            message: '',
+        },
     });
 
     // store the website url 
