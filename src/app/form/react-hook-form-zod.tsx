@@ -20,7 +20,7 @@ type Inputs = z.infer<typeof formSchema>;
 
 type ReactHookFormZod = {
     className?: string,
-    children: React.ReactNode
+    children?: React.ReactNode
 }
 
 export const ReactHookFormZod: React.FC<ReactHookFormZod> = ({ className, children }) => {
