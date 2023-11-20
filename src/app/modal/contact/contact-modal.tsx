@@ -3,8 +3,7 @@
 import { Button } from '@/components/ui/button';
 import React, { useState } from 'react';
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import { EnvelopeIcon } from "@heroicons/react/24/solid";
-import { ReactHookFormZod } from '../form/react-hook-form-zod';
+import { MultiStepContactForm } from './contact-form';
 
 function ModalTest() {
     const [isOpen, setIsOpen] = useState(false);
@@ -29,20 +28,17 @@ function ModalTest() {
                             <div className="modal-body h-full">
 
 
-                                <div className='grid md:grid-cols-2 h-full'>
-                                    <div className='bg-green-500 hidden md:block'>
-                                        c
+                                <div className='flex h-full flex-col lg:flex-row'>
+                                    <div className='bg-green-500 hidden md:block w-full xl:w-1/2'>
+                                        beetje text
                                     </div>
-
-                                    <div className='p-4 md:p-10 flex flex-col'>
-                                        <div className='flex gap-6'>
-                                            <Button variant='icon' colorScheme='ghost' size='sm' className=' ml-auto' ><EnvelopeIcon className='h-5 w-5' />Direct contact</Button>
+                                    <div className='p-4 md:p-10 xl:flex xl:flex-col lg:min-w-[750px] xl:w-1/2'>
+                                        <MultiStepContactForm className="m-auto" handleClose={handleClose} >
                                             <Button variant='icon' colorScheme='secondary' size='icon' onClick={handleClose}><XMarkIcon className='h-4 w-4' /></Button>
-                                        </div>
-                                        <ReactHookFormZod className="m-auto md:p-8" />
+                                        </MultiStepContactForm>
                                     </div>
-
                                 </div>
+                                
                             </div>
                         </div>
                     </div>

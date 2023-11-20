@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react'
 
 import { UseFormRegister, FieldValues, DeepMap, FieldError } from 'react-hook-form';
 import { Heading } from '@/components/typography';
-import { CheckboxGroup, RadioGroup } from '@/app/form/react-hook-form-zod';
+import { CheckboxGroup, RadioGroup } from '@/app/modal/contact/contact-form';
 
 // TypeScript types
 type WebDesignStepProps = {
@@ -31,10 +31,10 @@ export const WebDesignStep: React.FC<WebDesignStepProps> = ({ register, watch, e
 
     return (
         <>
-            <Heading level='h3' size='xl' colorScheme='accent'>Heeft U al een website?</Heading>
-            <RadioGroup data={HEEFT_WEBSITE} register={register} registerType="heeftWebsite" />
+            <Heading level='h4' size='base' colorScheme='donker'>Heeft U al een website?</Heading>
+            <RadioGroup data={HEEFT_WEBSITE} register={register} registerType="heeftWebsite" className='mt-3' />
             {watch('heeftWebsite') === 'Ja' && (
-                <label className='flex flex-col rounded-xl border border-gray-200 '>
+                <label className='flex flex-col rounded-xl border border-gray-200 mt-3'>
                     <textarea
                         className=' py-2 px-6 rounded-xl border-8 border-white'
                         placeholder="Uw website url..."
@@ -45,10 +45,10 @@ export const WebDesignStep: React.FC<WebDesignStepProps> = ({ register, watch, e
             )}
             <p>{errors.heeftWebsite?.message}</p>
 
-            <Heading level='h3' size='xl' colorScheme='accent'>Naar welke functionaliteit bent u op zoek?</Heading>
-            <CheckboxGroup data={WEBSITE_FUNCTIONALITEIT} register={register} registerType="websiteFunctionaliteit" />
+            <Heading level='h4' size='base' colorScheme='donker' className='mt-6'>Naar welke functionaliteit bent u op zoek?</Heading>
+            <CheckboxGroup data={WEBSITE_FUNCTIONALITEIT} register={register} registerType="websiteFunctionaliteit" className='mt-3' />
             {showOtherReasonWebFunctionality && (
-                <label className='flex flex-col rounded-xl border border-gray-200 '>
+                <label className='flex flex-col rounded-xl border border-gray-200 mt-3 '>
                     <textarea
                         className=' py-2 px-6 rounded-xl border-8 border-white'
                         placeholder="Gelieve te specificeren..."
