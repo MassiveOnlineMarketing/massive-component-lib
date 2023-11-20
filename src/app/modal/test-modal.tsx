@@ -23,7 +23,7 @@ function ModalTest() {
             <button className="fancy-btn open" onClick={handleOpen}>Can I haz Modal?</button>
 
             {isOpen && (
-                <div className={`modal-frame md:bottom-0 state-${isOpen ? 'appear' : 'leave'}`}>
+                <div className={`modal-frame h-full state-${isOpen ? 'appear' : 'leave'}`}>
                     {/* modal-full */}
                     <div className="modal w-full h-full">
                         <div className="modal-inset h-full">
