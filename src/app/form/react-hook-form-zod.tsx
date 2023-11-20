@@ -16,7 +16,7 @@ import { cn } from "@/lib/utils"
 
 type Inputs = z.infer<typeof formSchema>;
 
-export const ReactHookFormZod = ({ className }: { className: string }) => {
+export const ReactHookFormZod = ({ className }: { className?: string }) => {
 
     // set state data
     const [data, setData] = useState<Inputs>();

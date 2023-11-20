@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button';
 import React, { useState } from 'react';
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { EnvelopeIcon } from "@heroicons/react/24/solid";
-import { LazyLoadedForm } from '../form/lazyload-form';
 import { ReactHookFormZod } from '../form/react-hook-form-zod';
 
 function ModalTest() {
