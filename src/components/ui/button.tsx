@@ -32,9 +32,10 @@ const buttonVariants = cva(
         default: "rounded-md px-2.5 py-1.5 text-sm font-semibold",
         lg: "rounded-md px-3 py-2 text-sm font-semibold",
         xl: "rounded-md px-3.5 py-2.5 text-sm font-semibold",
+        icon: 'p-4'
       },
       variant: {
-        icon: "gap-2",
+        icon: "gap-2 items-center",
         rounded: "rounded-full",
       },
     },

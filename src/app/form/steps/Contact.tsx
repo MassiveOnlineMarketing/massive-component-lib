@@ -64,11 +64,14 @@ return (
                 defaultValue={websiteURL || ''}
                 {...register("websiteURL")}
             />
-            <input
-                className='inline-flex justify-between  py-4 px-8 rounded-xl border border-gray-200'
-                placeholder="Uw bericht..."
-                {...register("message")}
-            />
+            <label className='flex flex-col rounded-xl border border-gray-200 '>
+                <textarea
+                    className='py-2 px-6 rounded-xl border-8 border-white'
+                    placeholder="Uw bericht..."
+                    rows={3}
+                    {...register("message")}
+                />
+            </label>
             {errors.message?.message && (
                 <p className='text-red-500'>{errors.message.message}</p>
             )}

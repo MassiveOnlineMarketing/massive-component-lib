@@ -1,26 +1,51 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+'use client'
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+import React, { useState } from 'react';
+
+function ModalTest() {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleOpen = () => {
+        setIsOpen(true);
+    };
+
+    const handleClose = () => {
+        setIsOpen(false);
+    };
+
+    return (
+        <div>
+            <button className="fancy-btn open" onClick={handleOpen}>Can I haz Modal?</button>
+
+            {isOpen && (
+                <div className={`modal-frame state-${isOpen ? 'appear' : 'leave'}`}>
+                    {/* modal-full */}
+                    <div className="modal w-full h-full">
+                        <div className="modal-inset h-full">
+                            <div className="button close" onClick={handleClose}><i className="fa fa-close">X</i></div>
+                            <div className="modal-body">
+                               <div className='grid md:grid-cols-2'>
+                                <div className='bg-green-500'>
+                                    c
+                                </div>
+
+                                <div className='bg-blue-500'>
+c
+                                </div>
+
+                               </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {isOpen && <div className={`modal-overlay state-${isOpen ? 'show' : ''}`}></div>}
+        </div>
+    );
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: black;
-  background: white;
-}
-
+export default ModalTest;
 
 
 
@@ -45,13 +70,14 @@ body {
 
 .modal-frame {
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   margin: auto;
   z-index: 50;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+  text-align: center;
   visibility: hidden;
 }
 
@@ -86,16 +112,21 @@ body {
   transform: translateY(25px);
 }
 
-
+@-moz-document url-prefix() {
+  .modal-frame {
+      height: calc(100% - 55px);
+  }
+}
 
 .modal {
   display: block;
   vertical-align: middle;
-
+  text-align: center;
 }
 
 .modal-inset {
   position: relative;
+  padding: 60px;
   background-color: white;
   min-width: 320px;
   min-height: 126px;
@@ -107,6 +138,15 @@ body {
   transform-style: preserve-3d;
 }
 
+.modal-inset .close {
+  display: block;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  opacity: .4;
+}
 
 .modal-inset .close:hover {
   opacity: 1;

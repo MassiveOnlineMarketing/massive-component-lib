@@ -36,7 +36,7 @@ export const WebDesignStep: React.FC<WebDesignStepProps> = ({ register, watch, e
             {watch('heeftWebsite') === 'Ja' && (
                 <label className='flex flex-col rounded-xl border border-gray-200 '>
                     <textarea
-                        className=' py-4 px-8 rounded-xl border-8 border-white'
+                        className=' py-2 px-6 rounded-xl border-8 border-white'
                         placeholder="Uw website url..."
                         rows={1}
                         {...register('websiteURL')}
@@ -50,7 +50,7 @@ export const WebDesignStep: React.FC<WebDesignStepProps> = ({ register, watch, e
             {showOtherReasonWebFunctionality && (
                 <label className='flex flex-col rounded-xl border border-gray-200 '>
                     <textarea
-                        className=' py-4 px-8 rounded-xl border-8 border-white'
+                        className=' py-2 px-6 rounded-xl border-8 border-white'
                         placeholder="Gelieve te specificeren..."
                         rows={2}
                         {...register('otherReasonWebsiteFunctionaliteit')}

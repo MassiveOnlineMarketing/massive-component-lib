@@ -27,10 +27,20 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
+        modalOpacityIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        modalOpacityOut: {
+          '0%': { opacity: '1' },
+          '100%': { opacity: '0' },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "modal-opacity-in": 'modalOpacityIn 0.5s ease forwards',
+        "modal-opacity-out": 'modalOpacityOut 0.5s ease forwards',
       },
     },
   },

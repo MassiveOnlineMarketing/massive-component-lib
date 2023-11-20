@@ -22,7 +22,7 @@ const navigation = [
     { name: 'Tabs', href: '/tabs', icon: UsersIcon, current: false },
     { name: 'Typography', href: '/typography', icon: FolderIcon, current: false },
     { name: 'Form', href: '/form', icon: CalendarIcon, current: false },
-    // { name: 'Documents', href: 'https://youtu.be/dQw4w9WgXcQ?si=xCbgn5-qF2Sp2PFl', icon: DocumentDuplicateIcon, current: false },
+    { name: 'Modal', href: '/modal', icon: DocumentDuplicateIcon, current: false },
     // { name: 'Reports', href: 'https://youtu.be/dQw4w9WgXcQ?si=xCbgn5-qF2Sp2PFl', icon: ChartPieIcon, current: false },
 ]
 const teams = [

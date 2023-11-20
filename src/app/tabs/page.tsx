@@ -7,7 +7,7 @@ import "@/app/tabs/tabs.css"
 const Page: React.FC = () => {
 
     return (
-        <div className="grid justify-center w-full pt-[100px]">
+        <div className="grid justify-center w-full pt-[100px] bg-black text-white">
             <TabsContainer content={TABS_DATA} />
             <p>test</p>
         </div>

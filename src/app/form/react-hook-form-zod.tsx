@@ -12,10 +12,11 @@ import { submitForm } from '@/lib/actions/submit-form';
 import { WebDesignStep } from './steps/WebDesignStep';
 import { Button } from '@/components/ui/button';
 import { ContactStap } from './steps/Contact';
+import { cn } from "@/lib/utils"
 
 type Inputs = z.infer<typeof formSchema>;
 
-export const ReactHookFormZod = () => {
+export const ReactHookFormZod = ({ className }: { className: string }) => {
 
     // set state data
     const [data, setData] = useState<Inputs>();
@@ -26,7 +27,7 @@ export const ReactHookFormZod = () => {
         handleSubmit,
         watch,
         reset,
-        formState: { errors },
+        formState: { errors, isSubmitting },
     } = useForm<Inputs>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -125,7 +126,10 @@ export const ReactHookFormZod = () => {
 
     return (
 
-        <div className='pt-8'>
+        <div className={cn(
+            className,
+            ''
+        )}>
             <Heading level='h1' size='5xl' colorScheme='accent'>RHF with Zod Validation</Heading>
             <Heading level='h3' size='xl' colorScheme='accent'>In welke Dienst bent u geïnteresseerd?</Heading>
             <form
@@ -191,12 +195,14 @@ export const ReactHookFormZod = () => {
                 {currentStep === "contactDetails" &&
                     <>
                         <ContactStap register={register} watch={watch} errors={errors} websiteURL={websiteURL || ''}/>
+                        <div className='inline-flex gap-6'>
+                            <Button type='button' className="px-12 py-3 rounded-md" colorScheme='outline' onClick={prevStep}>Terug</Button>
+                            <Button type='submit' disabled={isSubmitting}  className="w-full py-3 rounded-md" colorScheme='primary'>Versturen</Button>
+                        </div>
                     </>
                 }
 
 
-
-                <button  className='bg-white'> Submit</button>
             </form>
 
 
