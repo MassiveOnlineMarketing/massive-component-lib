@@ -1,11 +1,11 @@
 import React from 'react'
 import './container.css'
-import { ResponsiveContainer } from './responsive-container'
-import { ResponsiveGridContainer } from './responsive-grid-container'
+
 
 import { RectangleGroupIcon } from "@heroicons/react/20/solid";
 import { Heading, Paragraph } from '@/components/typography';
 import { Card, Icon, StyledCard } from '@/components/card'
+import { ResponsiveContainer, ResponsiveGridContainer } from '@/components/containers';
 
 export default function page() {
   return (

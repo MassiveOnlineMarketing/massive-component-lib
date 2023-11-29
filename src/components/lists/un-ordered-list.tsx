@@ -20,9 +20,9 @@ const UnOrderedList: React.FC<UnOrderedListProps> = ({
             )}
         >
             {items.map((item, index) => (
-                <ListComponent 
-                    key={index} 
-                    item={item} 
+                <ListComponent
+                    key={index}
+                    item={item}
                 />
             ))}
         </ul>
@@ -32,6 +32,7 @@ const UnOrderedList: React.FC<UnOrderedListProps> = ({
 type ListItemProps = {
     item: {
         icon: React.ReactNode,
+        heading?: string,
         text: string
     }
     className?: string
@@ -40,7 +41,7 @@ type ListItemProps = {
 const SimpleListItem = ({ item, className }: ListItemProps) => {
     const { icon, text } = item
     return (
-        <li 
+        <li
             className={cn(
                 'flex gap-1 items-center',
                 className
@@ -65,4 +66,38 @@ const SwipeGridIconsText = ({ item }: ListItemProps) => {
     )
 }
 
-export { SwipeGridIconsText, UnOrderedList , SimpleListItem }
+
+
+type HoerenProps = {
+    item: {
+        icon: React.ReactNode;
+        heading?: string;
+        text: string;
+    }
+    className?: string;
+    iconClassName?: string;
+}
+
+const HOEREN = ({ item, className, iconClassName }: HoerenProps) => {
+    const { icon, heading, text } = item;
+
+    return (
+        <li className={cn(
+            className,
+        )} >
+            <div
+                className={cn(
+                    iconClassName,
+                )}
+            >
+                {icon}
+            </div>
+            <div>
+                <h3 className='text-lg md:text-2xl md:leading-8 font-semibold  '>{heading}</h3>
+                <p className={`pt-2 `}>{text}</p>
+            </div>
+        </li>
+    );
+}
+
+export { SwipeGridIconsText, UnOrderedList, SimpleListItem, HOEREN }

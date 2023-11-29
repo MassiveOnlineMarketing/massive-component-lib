@@ -11,9 +11,8 @@ export type HeadingProps = VariantProps<typeof headingVariants> &
 };
 
 // Types for Highlight
-export type HighlightProps = {
+export type HighlightProps = VariantProps<typeof highlightVariants> & {
     highlight?: string;
-    colorSchemeHighlight?: "default" | "muted" | "accent" | null | undefined;
 };
 
 // Combined Types for Heading with Highlight
@@ -24,7 +23,7 @@ export type HeadingWithHighlightProps = HeadingProps & HighlightProps;
 export type SubHeadingProps = VariantProps<typeof subHeadingVariants> &
     React.ComponentPropsWithoutRef<"h1"> &
 {
-    level: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+    level: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
     className?: string;
 };
 
@@ -42,7 +41,6 @@ export const headingVariants = cva(
     "transition-all",
     {
         defaultVariants: {
-            size: "xl",
             colorScheme: "default",
         },
         variants: {
@@ -58,11 +56,16 @@ export const headingVariants = cva(
                 xs: "text-xs leading-4 font-semibold md:text-xs md:leading-4",
             },
             colorScheme: {
-                default: "text-gray-900 dark:text-gray-100",
+                default: "text-gray-800 dark:text-gray-100",
                 muted: "text-gray-600 dark:text-gray-400",
                 accent: "text-indigo-600 dark:text-indigo-400",
-                donker: "text-[#1F2937]"
+                donker: "text-[#1F2937]",
+
+                'gradient-primary': 'text-gradient-primary',
             },
+            type: {
+                icon: 'flex gap-[10px] items-center'
+            }
         },
     }
 );
@@ -91,7 +94,8 @@ export const subHeadingVariants = cva(
                 gray: "text-gray-500 bg-gray-50",
                 'text-purple': "text-purple-500" ,
                 'gradient-primary': 'text-gradient-primary',
-                glass: 'text-white border border-[#1F2937] shadow-md backdrop-blur-md bg-gradient-to-r from-[#1F29371A]/50 to-[#1F29371A]/60'
+                'glass' : 'text-gray-800 border border-white shadow-md backdrop-blur-md bg-white/60 ', 
+                'glass-dark': 'text-white border border-[#1F2937] shadow-md backdrop-blur-md bg-gradient-to-r from-[#1F29371A]/50 to-[#1F29371A]/60'
             },
             variant: {
                 rounded: "rounded-full",
@@ -100,6 +104,9 @@ export const subHeadingVariants = cva(
                 base: "py-2 px-4 rounded-full shadow-sm border-2 border-white",
                 pill: 'py-[6px] px-5 rounded-[20px]'
             },
+            type: {
+                icon: 'flex gap-[10px] items-center'
+            }
         },
     }
 );
@@ -109,13 +116,14 @@ export const highlightVariants = cva(
     "transition-all",
     {
         defaultVariants: {
-            colorScheme: "default",
+            colorSchemeHighlight: "default",
         },
         variants: {
-            colorScheme: {
+            colorSchemeHighlight: {
                 default: "text-gray-900 dark:text-gray-100",
                 muted: "text-gray-600 dark:text-gray-400",
                 accent: "text-indigo-600 dark:text-indigo-400",
+                'gradient-primary': 'text-gradient-primary',
             },
         },
     }
@@ -152,8 +160,9 @@ const Heading: React.FC<HeadingWithHighlightProps> = (
         colorScheme = "default",
         className,
         highlight,
-        colorSchemeHighlight = "default",
+        colorSchemeHighlight ,
         transition,
+        type,
         children,
         ...props
     }) => {
@@ -162,8 +171,8 @@ const Heading: React.FC<HeadingWithHighlightProps> = (
     const Component = level as "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
     // Get the correct class names
-    const headingClasses = headingVariants({ size, colorScheme });
-    const highlightClasses = highlightVariants({ colorScheme: colorSchemeHighlight });
+    const headingClasses = headingVariants({ size, colorScheme, type });
+    const highlightClasses = highlightVariants({ colorSchemeHighlight });
 
     return (
         <Component className={cn(headingClasses, className, transition)} {...props}>
@@ -193,15 +202,16 @@ const SubHeading: React.FC<SubHeadingProps> = (
         variant,
         className,
         children,
+        type,
         ...props
     }
 ) => {
 
     // Options for rendering the correct heading level
-    const Component = level as "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+    const Component = level as "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
 
     // Get the correct class names
-    const subHeadingClasses = subHeadingVariants({ size, colorScheme, variant });
+    const subHeadingClasses = subHeadingVariants({ size, colorScheme, variant, type });
 
     return (
         <Component className={cn(subHeadingClasses, className)} {...props}>

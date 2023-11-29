@@ -21,7 +21,7 @@ export const CardOne = () => {
                 
                 <p>paragraaf</p>
 
-                <UnOrderedList items={TEST_DATA} listComponent={SimpleListItem} />
+                {/* <UnOrderedList items={TEST_DATA} listComponent={SimpleListItem} /> */}
                 <UnOrderedList items={TEST_DATA} listComponent={(item) => <SimpleListItem className="bg-blue-500 p-4" {...item} />} />
 
                 <Button size='xl' colorScheme='outline'>Neem Contact op</Button>

@@ -25,6 +25,13 @@ const navigation = [
     { name: 'Modal', href: '/modal', icon: DocumentDuplicateIcon, current: false },
     { name: 'Card', href: '/card', icon: ChartPieIcon, current: false },
     { name: 'Page Breakpoints', href: '/breakpoints', icon: ChartPieIcon, current: false },
+    { name: 'Layouts', href: '/layouts', icon: ChartPieIcon, current: false },
+    // { name: 'Page Breakpoints', href: '/breakpoints', icon: ChartPieIcon, current: false },
+    // { name: 'Page Breakpoints', href: '/breakpoints', icon: ChartPieIcon, current: false },
+    // { name: 'Page Breakpoints', href: '/breakpoints', icon: ChartPieIcon, current: false },
+    // { name: 'Page Breakpoints', href: '/breakpoints', icon: ChartPieIcon, current: false },
+    // { name: 'Page Breakpoints', href: '/breakpoints', icon: ChartPieIcon, current: false },
+    // { name: 'Page Breakpoints', href: '/breakpoints', icon: ChartPieIcon, current: false },
 ]
 const teams = [
     { id: 1, name: 'Heroicons', href: 'https://youtu.be/dQw4w9WgXcQ?si=xCbgn5-qF2Sp2PFl', initial: 'H', current: false },

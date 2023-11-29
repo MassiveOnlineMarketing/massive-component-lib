@@ -20,3 +20,38 @@ body {
   color: black;
   background: white;
 }
+
+
+
+
+.test-gradient{
+  background: linear-gradient(180deg, rgba(31, 41, 55, 0.60) 0%, rgba(31, 41, 55, 0.50) 100%) padding-box,
+  linear-gradient(to bottom, #1F2937, rgba(31, 41, 55, 0.1)) border-box;
+  border-radius: 50em;
+  border: 1px solid transparent;
+}
+
+
+.test-gradient-2{
+  backdrop-filter: blur(10px);
+  border-image: linear-gradient(#1F2937,  rgba(31, 41, 55, 0.1)) 90 ;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.test-gradient-3{
+  border: 1px solid transparent;
+  border-image: linear-gradient(45deg, red , yellow);
+  border-image-slice: 1;
+}
+
+.test-gradient-4{
+  /* Border */
+  border: 1px solid transparent;
+  border-radius: 20px;
+  background: 
+    /* linear-gradient(to right,  rgba(31, 41, 55, 0.60), rgba(31, 41, 55, 0.50)),  */
+    linear-gradient(to bottom,  #1F2937, rgba(31, 41, 55, 0.1)); 
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+} 
