@@ -1,7 +1,7 @@
 import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
-
+ 
 // Types for Heading
 export type HeadingProps = VariantProps<typeof headingVariants> &
     React.ComponentPropsWithoutRef<"h1"> &
@@ -24,6 +24,13 @@ export type SubHeadingProps = VariantProps<typeof subHeadingVariants> &
     React.ComponentPropsWithoutRef<"h1"> &
 {
     level: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+    className?: string;
+};
+
+// Types for Paragraph
+export type ParagraphProps = VariantProps<typeof paragraphVariants> & 
+    React.ComponentPropsWithoutRef<"p"> & 
+{
     className?: string;
 };
 
@@ -111,7 +118,28 @@ export const highlightVariants = cva(
     }
 );
 
-
+export const paragraphVariants = cva(
+    "transition-all",
+    {
+        defaultVariants: {
+            colorScheme: "default",
+        },
+        variants: {
+            size: {
+                xl: "text-xl leading-7",
+                lg: "text-lg leading-6",
+                base: "text-base leading-6",
+                sm: "text-sm leading-5",
+                xs: "text-xs leading-4",
+            },
+            colorScheme: {
+                default: "text-gray-900 dark:text-gray-100",
+                muted: "text-gray-600 dark:text-gray-400",
+                accent: "text-indigo-600 dark:text-indigo-400",
+            },
+        },
+    }
+);
 
 // Heading component
 const Heading: React.FC<HeadingWithHighlightProps> = (
@@ -178,8 +206,24 @@ const SubHeading: React.FC<SubHeadingProps> = (
     )
 }
 
+const Paragraph: React.FC<ParagraphProps> = (
+    { 
+        children, 
+        className,
+        size,
+        colorScheme, 
+        ...props 
+    }) => {
+
+    return (
+        <p className={cn(
+            paragraphVariants({size, colorScheme}), className)} {...props}>
+            {children}
+        </p>
+    )
+}
 
 
-export { Heading, SubHeading};
+export { Heading, SubHeading, Paragraph };
 
 

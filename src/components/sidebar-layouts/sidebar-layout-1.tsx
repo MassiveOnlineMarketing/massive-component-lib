@@ -23,7 +23,8 @@ const navigation = [
     { name: 'Typography', href: '/typography', icon: FolderIcon, current: false },
     { name: 'Form', href: '/form', icon: CalendarIcon, current: false },
     { name: 'Modal', href: '/modal', icon: DocumentDuplicateIcon, current: false },
-    // { name: 'Reports', href: 'https://youtu.be/dQw4w9WgXcQ?si=xCbgn5-qF2Sp2PFl', icon: ChartPieIcon, current: false },
+    { name: 'Card', href: '/card', icon: ChartPieIcon, current: false },
+    { name: 'Page Breakpoints', href: '/breakpoints', icon: ChartPieIcon, current: false },
 ]
 const teams = [
     { id: 1, name: 'Heroicons', href: 'https://youtu.be/dQw4w9WgXcQ?si=xCbgn5-qF2Sp2PFl', initial: 'H', current: false },

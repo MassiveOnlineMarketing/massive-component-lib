@@ -27,10 +27,10 @@ type Inputs = z.infer<typeof formSchema>;
 type MultiStepContactForm = {
     className?: string,
     children: React.ReactNode,
-    handleClose: () => void
+    // handleClose: () => void // add back to props
 }
 
-export const MultiStepContactForm: React.FC<MultiStepContactForm> = ({ className, children, handleClose }) => {
+export const MultiStepContactForm: React.FC<MultiStepContactForm> = ({ className, children }) => {
     // set state data
     const [data, setData] = useState<Inputs>();
 

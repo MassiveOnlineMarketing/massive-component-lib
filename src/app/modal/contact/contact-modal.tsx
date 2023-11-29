@@ -33,7 +33,9 @@ function ModalTest() {
                                         beetje text
                                     </div>
                                     <div className='p-4 md:p-10 xl:flex xl:flex-col lg:min-w-[750px] xl:w-1/2'>
-                                        <MultiStepContactForm className="m-auto" handleClose={handleClose} >
+                                        
+                                        {/* handleClose={handleClose} */}
+                                        <MultiStepContactForm className="m-auto"  >
                                             <Button variant='icon' colorScheme='secondary' size='icon' onClick={handleClose}><XMarkIcon className='h-4 w-4' /></Button>
                                         </MultiStepContactForm>
                                     </div>
