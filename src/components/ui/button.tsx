@@ -9,7 +9,7 @@ const buttonVariants = cva(
   {
     defaultVariants: {
       colorScheme: "default",
-      size: "default",
+      // size: "default",
       variant: "icon",
     },
     variants: {
@@ -25,6 +25,7 @@ const buttonVariants = cva(
           "border border-neutral-200 bg-white hover:bg-neutral-100 hover:text-neutral-900 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:bg-neutral-800 dark:hover:text-neutral-50",
         ghost: "hover:bg-neutral-100 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50",
         link: "text-neutral-900 underline-offset-4 hover:underline dark:text-neutral-50",
+        nav: 'py-[6px] px-4 rounded-full border border-[#000]/10  shadow-md bg-gradient-to-b from-[#fff]/60 to-[#fff]/50',
       },
       size: {
         xs: "rounded px-2 py-1 text-xs font-semibold",

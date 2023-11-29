@@ -9,7 +9,7 @@ const Title: React.FC<TitleProps> = ({ children, className}) => {
 
   return (
     <div className={cn(
-      'flex flex-col gap-4 items-center',
+      'flex flex-col gap-4',
       className
     )}>
       {children}

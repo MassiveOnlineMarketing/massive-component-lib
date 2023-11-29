@@ -13,10 +13,13 @@ import { HOEREN, SimpleListItem, UnOrderedList } from '@/components/lists/un-ord
 import { cn } from '@/lib/utils';
 
 
+
 export default function page() {
 
   return (
     <>
+
+
       <ResponsiveContainer className="my-10">
         the container
       </ResponsiveContainer>
@@ -67,10 +70,10 @@ export default function page() {
       </ResponsiveFlexContainer>
 
       <ResponsiveContainer className="my-10">
-        <Title>
+        <Title className='md:items-center md:text-center '>
           <SubHeading level="p" size="sm" colorScheme='gradient-primary' >Digital Marketing Bureau</SubHeading>
           <Heading level='h1' size='5xl' colorScheme='donker' highlight='Online Succes' colorSchemeHighlight='gradient-primary'>Uw marketing partner voor Online Succes</Heading>
-          <Paragraph size='base' colorScheme='default' className='max-w-[750px] text-center' >Zet uw zakelijke visie om in tastbare sucessen met strategieën die ondernemerschap en resultaatgerichtheid combineren</Paragraph>
+          <Paragraph size='base' colorScheme='default' className='max-w-[750px] ' >Zet uw zakelijke visie om in tastbare sucessen met strategieën die ondernemerschap en resultaatgerichtheid combineren</Paragraph>
         </Title>
         <GridContainer columns='3' className="gap-6 mt-6">
           <div className='flex flex-col gap-8'>
