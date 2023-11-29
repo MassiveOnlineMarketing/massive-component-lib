@@ -12,13 +12,13 @@ const page = () => {
         <Heading level="h6" size="lg" colorScheme="accent" className="">{ HEADING_TEXT }</Heading>
         <Heading level="h6" size="base" colorScheme="accent" className="">{ HEADING_TEXT }</Heading>
         <Heading level="h6" size="sm" colorScheme="accent" className="">{ HEADING_TEXT }</Heading>
-        <Heading level="h6" size="xs" colorScheme="accent" className="">{ HEADING_TEXT }</Heading>
+        <Heading level="h6" size="xs" colorScheme="accent" className=" rounded">{ HEADING_TEXT }</Heading>
       </div>
       <div className="flex flex-col gap-2 w- ">
         <SubHeading level='h6' size='sm' colorScheme='purple' variant="test" >subheading</SubHeading>
         <SubHeading level='h4' size='sm' colorScheme='gray' variant='base' >Digital Marketing Bureau</SubHeading>
         <SubHeading level="h2" size="sm" colorScheme='gradient-primary' >Digital Marketing Bureau</SubHeading>
-        <SubHeading level="h2" size="sm" colorScheme='text-purple' >Digital Marketing Bureau</SubHeading>
+        <SubHeading level="h2" size="sm" colorScheme='glass' variant='pill' className="" >Digital Marketing Bureau</SubHeading>
       </div>
     </div>
   )

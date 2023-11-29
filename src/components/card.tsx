@@ -1,14 +1,35 @@
 import { cn } from "@/lib/utils"
 import { VariantProps, cva } from "class-variance-authority";
 
+
+
+// imports for the card
+import { RectangleGroupIcon } from "@heroicons/react/20/solid";
+import { Heading, Paragraph } from '@/components/typography';
+
+const StyledCard: React.FC = () => {
+
+  return (
+    <Card className='p-10 bg-white rounded-2xl' transition='transition-all duration-500 hover:bg-green-500 hover:-translate-y-4'>
+      <Icon color='accent' border='accent' background='donker' varient='rounded' className='p-2' >
+        <RectangleGroupIcon className='w-8 ' />
+      </Icon>
+      <Heading level='h2' size='2xl' colorScheme='default' highlight='Website' colorSchemeHighlight='accent' transition='group-hover:text-blue-500 duration-500'>Zakelijke Website</Heading>
+      <Paragraph size='lg' colorScheme='default' >Transformeer uw zakelijke visie, laat nu een professionele, op maat gemaakte website bouwen die even indrukwekkend is als uw</Paragraph>
+    </Card>
+  )
+}
+
+
 // Type for Cards
 export type CardProps = {
   children: React.ReactNode;
   className?: string;
+  transition?: string;
 };
 
 // Type for Icon 
-type IconProps = VariantProps<typeof iconVariants> & {
+export type IconProps = VariantProps<typeof iconVariants> & {
   children: React.ReactNode;
   className?: string;
 };
@@ -54,13 +75,15 @@ export const iconVariants = cva(
 const Card: React.FC<CardProps> = (
   {
       children,
-      className
+      className,
+      transition,
   }) => {
   
   return (
     <div className={cn(
       'flex flex-col gap-8 p-2 bg-blue-500',
-      className
+      className,
+      `group ${transition}`
     )}>
       {children}
     </div>
@@ -93,4 +116,4 @@ const Icon: React.FC<IconProps> = (
 }
 
 
-export { Card, Icon };
+export { Card, Icon, StyledCard };

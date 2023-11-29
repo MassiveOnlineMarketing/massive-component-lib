@@ -7,6 +7,7 @@ export type HeadingProps = VariantProps<typeof headingVariants> &
     React.ComponentPropsWithoutRef<"h1"> &
 {
     level: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+    transition?: string;
 };
 
 // Types for Highlight
@@ -89,13 +90,15 @@ export const subHeadingVariants = cva(
                 purple: "text-purple-600 bg-purple-100 dark:text-purple-400",
                 gray: "text-gray-500 bg-gray-50",
                 'text-purple': "text-purple-500" ,
-                'gradient-primary': 'text-gradient-primary'
+                'gradient-primary': 'text-gradient-primary',
+                glass: 'text-white border border-[#1F2937] shadow-md backdrop-blur-md bg-gradient-to-r from-[#1F29371A]/50 to-[#1F29371A]/60'
             },
             variant: {
                 rounded: "rounded-full",
                 box: "rounded-md",
                 test: "py-[2px] px-[12px] rounded-[20px] shadow-sm border border-white capitalize",
-                base: "py-2 px-4 rounded-full shadow-sm border-2 border-white"
+                base: "py-2 px-4 rounded-full shadow-sm border-2 border-white",
+                pill: 'py-[6px] px-5 rounded-[20px]'
             },
         },
     }
@@ -150,6 +153,7 @@ const Heading: React.FC<HeadingWithHighlightProps> = (
         className,
         highlight,
         colorSchemeHighlight = "default",
+        transition,
         children,
         ...props
     }) => {
@@ -162,13 +166,13 @@ const Heading: React.FC<HeadingWithHighlightProps> = (
     const highlightClasses = highlightVariants({ colorScheme: colorSchemeHighlight });
 
     return (
-        <Component className={cn(headingClasses, className)} {...props}>
+        <Component className={cn(headingClasses, className, transition)} {...props}>
             {highlight && children ? (
                 <>
                     {children.toString().split(highlight).map((part, i, arr) => (
                         <>
                             {part}
-                            {i < arr.length - 1 && <span key={i} className={cn(highlightClasses)}>{highlight}</span>}
+                            {i < arr.length - 1 && <span key={i} className={cn(highlightClasses, className)}>{highlight}</span>}
                         </>
                     ))}
                 </>
