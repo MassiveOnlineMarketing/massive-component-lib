@@ -55,3 +55,96 @@ body {
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
 } 
+
+
+.dark-glass-border-gradient:before {
+  background-image: linear-gradient(to top, rgba(31, 41, 55, 100), rgba(31, 41, 55, 0));
+  padding: 1px;
+  
+
+  border-radius: inherit;
+  content: "";
+  inset: 0;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  position: absolute;
+}
+
+
+.glass-border-gradient:before{
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 100), rgba(255, 255, 255, 0));
+  padding: 1px;
+
+  border-radius: inherit;
+  content: "";
+  inset: 0;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  position: absolute;
+}
+
+
+.dark-border-gradient:before{
+  
+  background: 
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%) padding-box,
+    linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 100%) border-box;
+  padding: 1px;
+  
+
+  border-radius: inherit;
+  content: "";
+  inset: 0;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  position: absolute;
+}
+/* 
+inear-gradient(180deg, rgba(31, 41, 55, 0.60) 0%, rgba(31, 41, 55, 0.50) 100%) padding-box,
+  linear-gradient(to bottom, #1F2937, rgba(31, 41, 55, 0.1)) border-box; */
+
+
+.blend-mode-overlay{
+  mix-blend-mode: overlay;
+  background: 
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%) padding-box,
+    linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%) border-box;
+}
+
+
+
+/* Buttons */
+
+.primary-button{
+  background: linear-gradient(222deg, rgba(255, 255, 255, 0.20) -0.18%, rgba(255, 255, 255, 0.00) 0.47%), linear-gradient(180deg, #7857FF 52.48%, #6442F2 100%);
+}
+.primary-button:before{
+  
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(236, 181, 255, 0.85) 50%, rgba(236, 181, 255, 0.2) 100%);
+  opacity: 0.3;
+  padding: 1px;
+  
+
+  border-radius: inherit;
+  content: "";
+  inset: 1.5px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  position: absolute;
+}

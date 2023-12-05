@@ -94,8 +94,8 @@ export const subHeadingVariants = cva(
                 gray: "text-gray-500 bg-gray-50",
                 'text-purple': "text-purple-500" ,
                 'gradient-primary': 'text-gradient-primary',
-                'glass' : 'text-gray-800 border border-white shadow-md backdrop-blur-md bg-white/60 ', 
-                'glass-dark': 'text-white border border-[#1F2937] shadow-md backdrop-blur-md bg-gradient-to-r from-[#1F29371A]/50 to-[#1F29371A]/60'
+                'glass' : 'text-gray-800  shadow-md backdrop-blur-md bg-gradient-to-b from-[#fff]/60 to-[#fff]/50 bg-white/60 glass-border-gradient relative', 
+                'glass-dark': 'text-white shadow-md backdrop-blur-md bg-gradient-to-b from-[#1F29371A]/60 to-[#1F29371A]/50 dark-glass-border-gradient relative'
             },
             variant: {
                 rounded: "rounded-full",

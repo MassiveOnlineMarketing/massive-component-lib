@@ -25,14 +25,16 @@ const page = () => {
         <SubHeading level='h4' size='sm' colorScheme='gray' variant='base' >Digital Marketing Bureau</SubHeading>
         <SubHeading level="h2" size="sm" colorScheme='gradient-primary' >Digital Marketing Bureau</SubHeading>
         <SubHeading level="h2" size="sm" colorScheme='glass' variant='pill' className=" " >Digital Marketing Bureau</SubHeading>
+        <SubHeading level="p" size="sm" colorScheme='glass-dark' variant='pill' type='icon'> <AcademicCapIcon className="w-4 h-4" /> Massive</SubHeading>
+
       </div>
 
 
 
-      <Heading level="h2" size="4xl" colorScheme="muted" className="mt-20" > Title component </Heading>
+      <Heading level="h2" size="4xl" colorScheme="muted" className="mt-20 bg-[#1F29371A]" > Title component </Heading>
       <ResponsiveContainer className="p-10 my-10">
         <Title className="max-w-[500px] mx-auto text-center">
-          <SubHeading level="p" size="sm" colorScheme='glass' variant='pill' type='icon'> <AcademicCapIcon className="w-4 h-4" /> Massive</SubHeading>
+          <SubHeading level="p" size="sm" colorScheme='glass-dark' variant='pill' type='icon'> <AcademicCapIcon className="w-4 h-4" /> Massive</SubHeading>
           <Heading level="h1" className="md:text-7xl max-w-[350px] font-bold" >Online Marketing</Heading>
           <Paragraph size='base' colorScheme='default' >Zet uw zakelijke visie om in tastbare sucessen met strategieën die ondernemerschap en resultaatgerichtheid combineren</Paragraph>
           <Button size='xl' colorScheme='default' variant='icon'>Volgende <ArrowRightIcon className="text-neutral-50 w-4 h-4 " /> </Button>
