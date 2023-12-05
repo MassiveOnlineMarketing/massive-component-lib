@@ -131,7 +131,10 @@ inear-gradient(180deg, rgba(31, 41, 55, 0.60) 0%, rgba(31, 41, 55, 0.50) 100%) p
 
 /* Buttons */
 .primary-button{
-  background: linear-gradient(222deg, rgba(255, 255, 255, 0.20) -0.18%, rgba(255, 255, 255, 0.00) 0.47%), linear-gradient(180deg, #7857FF 52.48%, #6442F2 100%);
+  background: linear-gradient(180deg, #7857FF 52.48%, #6442F2 100%);
+}
+.primary-button:hover{
+  background: linear-gradient(180deg, #8568FF 0%, #7758F6 100%);
 }
 .primary-button:before{
   background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(236, 181, 255, 0.85) 50%, rgba(236, 181, 255, 0.2) 100%);

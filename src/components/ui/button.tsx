@@ -11,8 +11,8 @@ const buttonVariants = cva(
   {
     defaultVariants: {
       variant: "primary",
+      size: "md",
       // size: "default",
-      option: "icon",
     },
     variants: {
       variant: {
@@ -20,11 +20,11 @@ const buttonVariants = cva(
         //bg-indigo-600 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600
         secondary:"bg-white text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50",
 
-        light: 'border border-gray-200 text-gray-600 hover:shadow-base hover:border-none hover:-translate-y-[1px]',
+        light: 'border border-gray-200 text-gray-600 hover:shadow-base hover:border-none hover:-translate-y-[1px] hover:mb-[1px] transition-transform duration-100',
         dark: 'text-gray-50 bg-gradient-to-b from-[#1F2937]/60 to-[#1F2937]/50 dark-border-gradient relative',
         flat: 'text-gray-50 bg-gray-800 hover:bg-gray-700',
         text: 'text-gray-800 hover:text-primary',
-        disabled: 'text-gray-400 bg-gray-200',
+        disabled: 'text-gray-400 bg-gray-200 cursor-not-allowed',
 
 
         soft: "bg-indigo-50 text-indigo-600 shadow-sm hover:bg-indigo-100",
@@ -40,14 +40,14 @@ const buttonVariants = cva(
         // bg-gradient-to-b from-[#fff]/60 to-[#fff]/50
       },
       size: {
-        xs: "px-[12px] py-[6px] text-xs font-medium leading-4",
-        sm: "px-[16px] py-[8px] text-sm font-medium leading-5",
-        md: "px-[24px] py-[12px] text-base font-semibold leading-6",
-        lg: "px-[32px] py-[14px] text-base font-semibold leading-6",
+        xs: "px-[12px] py-[6px] text-xs font-medium leading-4 gap-[4px]",
+        sm: "px-[16px] py-[8px] text-sm font-medium leading-5 gap-[6px]",
+        md: "px-[24px] py-[12px] text-base font-semibold leading-6 gap-[8px]",
+        lg: "px-[32px] py-[14px] text-base font-semibold leading-6 gap-[12px]",
         icon: 'p-4'
       },
       option: {
-        icon: "gap-2 items-center",
+        icon: "items-center",
         rounded: "rounded-full",
       },
     },
