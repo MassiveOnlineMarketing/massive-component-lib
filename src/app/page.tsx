@@ -13,10 +13,10 @@ export default function Home() {
         <Button size="md" variant="primary">Ondek onze Diensten</Button>
         <Button size="lg" variant="primary">Ondek onze Diensten</Button>
 
-        <Button size="xs" variant="light" className="hover:-translate-y-[1px]">Ondek onze Diensten</Button>
-        <Button size="sm" variant="light" className="hover:-translate-y-[2px]">Ondek onze Diensten</Button>
-        <Button size="md" variant="light" className="hover:-translate-y-[3px]">Ondek onze Diensten</Button>
-        <Button size="lg" variant="light" className="hover:-translate-y-[4px]">Ondek onze Diensten</Button>
+        <Button size="xs" variant="light" className=" transition-transform duration-100">Ondek onze Diensten</Button>
+        <Button size="sm" variant="light" className=" transition-transform duration-150">Ondek onze Diensten</Button>
+        <Button size="md" variant="light" className=" transition-transform duration-200" >Ondek onze Diensten</Button>
+        <Button size="lg" variant="light" className=" transition-transform duration-250">Ondek onze Diensten</Button>
 
         <Button size="xs" variant="dark">Ondek onze Diensten</Button>
         <Button size="sm" variant="dark">Ondek onze Diensten</Button>
