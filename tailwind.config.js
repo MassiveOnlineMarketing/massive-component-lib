@@ -26,6 +26,9 @@ module.exports = {
       },
     },
     extend: {
+      colors: {
+        'primary': '#7857FF',
+      },
       transitionDuration: {
         5000: "5000ms",
       },
