@@ -137,7 +137,7 @@ inear-gradient(180deg, rgba(31, 41, 55, 0.60) 0%, rgba(31, 41, 55, 0.50) 100%) p
   padding: 1px;
   
 
-  border-radius: inherit;
+  border-radius: 6.5px;
   content: "";
   inset: 1.5px;
   -webkit-mask: linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);

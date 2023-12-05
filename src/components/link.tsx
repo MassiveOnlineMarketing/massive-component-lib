@@ -15,14 +15,14 @@ export interface ExternalAnchorProps
 
 const ExternalAnchor = React.forwardRef<HTMLAnchorElement, ExternalAnchorProps>(
     (
-        { className, colorScheme, size, variant, asChild = false, ...props },
+        { className, option, size, variant, asChild = false, ...props },
         ref
     ) => {
         const Comp = asChild ? Slot : "a";
         return (
             <Comp
                 className={cn(
-                    buttonVariants({ colorScheme, size, variant, className })
+                    buttonVariants({option, size, variant, className })
                 )}
                 ref={ref}
                 {...props}
@@ -42,7 +42,7 @@ VariantProps<typeof buttonVariants> {
 
 const InternalAnchor = React.forwardRef<HTMLAnchorElement, InternalAnchorProps>(
     (
-        { className, colorScheme, size, variant, href, ...props },
+        { className, option, size, variant, href, ...props },
         ref
     ) => {
         return (
@@ -50,7 +50,7 @@ const InternalAnchor = React.forwardRef<HTMLAnchorElement, InternalAnchorProps>(
                 href={href}
                 {...props}
                 className={cn(
-                    buttonVariants({ colorScheme, size, variant, className })
+                    buttonVariants({ option, size, variant, className })
                 )}
                 ref={ref}
             ></Link>

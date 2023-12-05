@@ -141,7 +141,7 @@ export const ReactHookFormZod: React.FC<ReactHookFormZod> = ({ className, childr
             'h-full'
         )}>
             <div className='flex gap-6 mb-auto'>
-                <Button variant='icon' colorScheme='ghost' size='sm' className=' ml-auto' onClick={skipToContactDetails}><EnvelopeIcon className='h-5 w-5' />Direct contact</Button>
+                <Button option='icon' variant='ghost' size='sm' className=' ml-auto' onClick={skipToContactDetails}><EnvelopeIcon className='h-5 w-5' />Direct contact</Button>
                 {children}
             </div>
 
@@ -160,7 +160,7 @@ export const ReactHookFormZod: React.FC<ReactHookFormZod> = ({ className, childr
                         <Heading level='h3' size='xl' colorScheme='accent'>In welke Dienst bent u geïnteresseerd?</Heading>
                         <RadioGroup data={DIENSTEN_OPTIES} register={register} registerType="dienst" />
                         <p>{errors.dienst?.message}</p>
-                        <Button type='button' size='xl' colorScheme='primary' onClick={nextStep}>Volgende</Button>
+                        <Button type='button' size='lg' variant='primary' onClick={nextStep}>Volgende</Button>
                     </>
                 }
 
@@ -169,8 +169,8 @@ export const ReactHookFormZod: React.FC<ReactHookFormZod> = ({ className, childr
                 <>
                     <WebDesignStep register={register} watch={watch} errors={errors} />
                     <div className='inline-flex gap-6'>
-                        <Button type='button'  className="px-12 py-3 rounded-md" colorScheme='outline' onClick={prevStep}>Terug</Button>
-                        <Button type='button'  className="w-full py-3 rounded-md" colorScheme='primary' onClick={nextStep}>Volgende</Button>
+                        <Button type='button'  className="px-12 py-3 rounded-md" variant='outline' onClick={prevStep}>Terug</Button>
+                        <Button type='button'  className="w-full py-3 rounded-md" variant='primary' onClick={nextStep}>Volgende</Button>
                     </div>
                 </>
                 }
@@ -211,8 +211,8 @@ export const ReactHookFormZod: React.FC<ReactHookFormZod> = ({ className, childr
                     <>
                         <ContactStap register={register} watch={watch} errors={errors} websiteURL={websiteURL || ''}/>
                         <div className='inline-flex gap-6'>
-                            <Button type='button' className="px-12 py-3 rounded-md" colorScheme='outline' onClick={prevStep}>Terug</Button>
-                            <Button type='submit' disabled={isSubmitting}  className="w-full py-3 rounded-md" colorScheme='primary'>Versturen</Button>
+                            <Button type='button' className="px-12 py-3 rounded-md" variant='outline' onClick={prevStep}>Terug</Button>
+                            <Button type='submit' disabled={isSubmitting}  className="w-full py-3 rounded-md" variant='primary'>Versturen</Button>
                         </div>
                     </>
                 }

@@ -37,7 +37,7 @@ const page = () => {
           <SubHeading level="p" size="sm" colorScheme='glass-dark' variant='pill' type='icon'> <AcademicCapIcon className="w-4 h-4" /> Massive</SubHeading>
           <Heading level="h1" className="md:text-7xl max-w-[350px] font-bold" >Online Marketing</Heading>
           <Paragraph size='base' colorScheme='default' >Zet uw zakelijke visie om in tastbare sucessen met strategieën die ondernemerschap en resultaatgerichtheid combineren</Paragraph>
-          <Button size='xl' colorScheme='default' variant='icon'>Volgende <ArrowRightIcon className="text-neutral-50 w-4 h-4 " /> </Button>
+          <Button size='lg' variant='default' option='icon'>Volgende <ArrowRightIcon className="text-neutral-50 w-4 h-4 " /> </Button>
         </Title>
       </ResponsiveContainer>
     </div>

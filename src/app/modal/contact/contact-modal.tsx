@@ -36,7 +36,7 @@ function ModalTest() {
                                         
                                         {/* handleClose={handleClose} */}
                                         <MultiStepContactForm className="m-auto"  >
-                                            <Button variant='icon' colorScheme='secondary' size='icon' onClick={handleClose}><XMarkIcon className='h-4 w-4' /></Button>
+                                            <Button option='icon' variant='secondary' size='icon' onClick={handleClose}><XMarkIcon className='h-4 w-4' /></Button>
                                         </MultiStepContactForm>
                                     </div>
                                 </div>
