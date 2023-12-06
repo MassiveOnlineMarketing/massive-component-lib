@@ -25,18 +25,8 @@ const buttonVariants = cva(
         flat: 'text-gray-50 bg-gray-800 hover:bg-gray-700',
         text: 'text-gray-800 hover:text-primary',
         disabled: 'text-gray-400 bg-gray-200 cursor-not-allowed',
-
-
-        soft: "bg-indigo-50 text-indigo-600 shadow-sm hover:bg-indigo-100",
-  
-        default: "bg-gray-800 text-neutral-50 hover:bg-neutral-900/90 dark:bg-neutral-50 dark:text-neutral-900 dark:hover:bg-neutral-50/90",
-        destructive:
-          "bg-red-500 text-neutral-50 hover:bg-red-500/90 dark:bg-red-900 dark:text-neutral-50 dark:hover:bg-red-900/90",
-        outline:
-          "border border-neutral-200 bg-white hover:bg-neutral-100 hover:text-neutral-900 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:bg-neutral-800 dark:hover:text-neutral-50",
-        ghost: "hover:bg-neutral-100 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50",
-        link: "text-neutral-900 underline-offset-4 hover:underline dark:text-neutral-50",
-        nav: 'py-[6px] px-4 rounded-full border border-[#000]/10  shadow-md bg-[#fff]/50 transition-all duration-500 hover:shadow-none hover:border-transparent hover:bg-[#fff]/0',
+        outline: "border border-neutral-200 bg-white hover:bg-neutral-100 hover:text-neutral-900 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:bg-neutral-800 dark:hover:text-neutral-50",
+        icon: 'p-4'
         // bg-gradient-to-b from-[#fff]/60 to-[#fff]/50
       },
       size: {
@@ -44,10 +34,9 @@ const buttonVariants = cva(
         sm: "px-[16px] py-[8px] text-sm font-medium leading-5 gap-[6px]",
         md: "px-[24px] py-[12px] text-base font-semibold leading-6 gap-[8px]",
         lg: "px-[32px] py-[14px] text-base font-semibold leading-6 gap-[12px]",
-        icon: 'p-4'
       },
       option: {
-        icon: "items-center",
+        icon: "items-center p-4",
         rounded: "rounded-full",
       },
     },

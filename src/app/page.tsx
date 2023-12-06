@@ -37,12 +37,7 @@ export default function Home() {
         <Button size="sm" variant="disabled">Ondek onze Diensten</Button>
         <Button size="md" variant="disabled">Ondek onze Diensten</Button>
         <Button size="lg" variant="disabled">Ondek onze Diensten</Button>
-      
       </div>
-
-      <Button size="lg" variant="soft" option="icon" className=" relative" >
-        <AcademicCapIcon className="mr-0.5 h-5 w-5" /> Hello
-      </Button>
 
       {/* <MyLink href="/about" colorScheme="primary" variant="rounded" className="bg-amber-500">
         This is a linkz

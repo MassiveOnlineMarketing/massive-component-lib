@@ -21,6 +21,7 @@ import { Button } from '@/components/ui/button';
 // form steps
 import { WebDesignStep } from './WebDesignStep';
 import { ContactStap } from './Contact';
+import { Textarea } from '@/components/input/fields';
 
 type Inputs = z.infer<typeof formSchema>;
 
@@ -149,7 +150,7 @@ export const MultiStepContactForm: React.FC<MultiStepContactForm> = ({ className
             'h-full w-full'
         )}>
             <div className='flex gap-6 mb-auto'>
-                <Button option='icon' variant='ghost' size='sm' className=' ml-auto' onClick={skipToContactDetails}><EnvelopeIcon className='h-5 w-5' />Direct contact</Button>
+                <Button variant='outline' className=' ml-auto' onClick={skipToContactDetails}><EnvelopeIcon className='h-5 w-5' />Direct contact</Button>
                 {children}
             </div>
 
@@ -176,8 +177,8 @@ export const MultiStepContactForm: React.FC<MultiStepContactForm> = ({ className
                     <Heading level='h3' size='xl' colorScheme='accent' className='mb-8'>Web Design & Development</Heading>
                     <WebDesignStep register={register} watch={watch} errors={errors} />
                     <div className='inline-flex gap-6 mt-12 w-full'>
-                        <Button type='button'  className="px-12 py-3 rounded-md" variant='outline' onClick={prevStep}>Terug</Button>
-                        <Button type='button'  className="w-full py-3 rounded-md" variant='primary' onClick={nextStep}>Volgende</Button>
+                        <Button type='button' variant='outline' className="px-12 py-3" onClick={prevStep}>Terug</Button>
+                        <Button type='button' variant='primary' className="w-full py-3" onClick={nextStep}>Volgende</Button>
                     </div>
                 </>
                 }
@@ -220,8 +221,8 @@ export const MultiStepContactForm: React.FC<MultiStepContactForm> = ({ className
                         <Heading level='h3' size='xl' colorScheme='accent' className='mb-8'>Contact Gegevens</Heading>
                         <ContactStap register={register} watch={watch} errors={errors} websiteURL={websiteURL || ''}/>
                         <div className='inline-flex gap-6 mt-12 w-full'>
-                            <Button type='button' className="px-12 py-3 rounded-md" variant='outline' onClick={prevStep}>Terug</Button>
-                            <Button type='submit' disabled={isSubmitting}  className="w-full py-3 rounded-md" variant='primary'>Versturen</Button>
+                            <Button type='button' variant='outline' className="px-12 py-3" onClick={prevStep}>Terug</Button>
+                            <Button type='submit' variant='primary' className="w-full py-3" disabled={isSubmitting} >Versturen</Button>
                         </div>
                     </>
                 }
