@@ -141,7 +141,7 @@ export const ReactHookFormZod: React.FC<ReactHookFormZod> = ({ className, childr
             'h-full'
         )}>
             <div className='flex gap-6 mb-auto'>
-                <Button option='icon' variant='ghost' size='sm' className=' ml-auto' onClick={skipToContactDetails}><EnvelopeIcon className='h-5 w-5' />Direct contact</Button>
+                <Button option='icon' variant='outline' size='sm' className=' ml-auto' onClick={skipToContactDetails}><EnvelopeIcon className='h-5 w-5' />Direct contact</Button>
                 {children}
             </div>
 
