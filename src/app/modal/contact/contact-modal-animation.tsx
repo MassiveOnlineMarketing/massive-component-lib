@@ -9,7 +9,7 @@ import useAnimatedVisibility from '../CUSTOMHOOKuseAnimatedVisibility';
 function ModalTestAnimation() {
     const { isVisible, setIsVisible, shouldRender, animationClass } = useAnimatedVisibility({
         initialIsVisible: false,
-        animationDuration: 500,
+        animationDuration: 200,
         animationIn: 'element',
         animationOut: 'element-out'
     });

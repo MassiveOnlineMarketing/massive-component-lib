@@ -18,7 +18,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 
-const frameworks = [
+const data = [
   {
     value: "nl",
     label: "Dutch",
@@ -83,7 +83,7 @@ export function Combobox() {
           className="justify-between w-[232px] mt-4"
         >
           {value
-            ? frameworks.find((framework) => framework.value === value)?.label
+            ? data.find((item) => item.value === value)?.label
             : "Select Language..."}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
@@ -93,10 +93,10 @@ export function Combobox() {
           <CommandInput placeholder="Search Language..." />
           <CommandEmpty>Language not found.</CommandEmpty>
           <CommandGroup className="max-h-[270px] overflow-y-scroll">
-            {frameworks.map((framework) => (
+            {data.map((item) => (
               <CommandItem
-                key={framework.value}
-                value={framework.value}
+                key={item.value}
+                value={item.value}
                 onSelect={(currentValue) => {
                   setValue(currentValue === value ? "" : currentValue)
                   setOpen(false)
@@ -105,10 +105,10 @@ export function Combobox() {
                 <Check
                   className={cn(
                     "mr-2 h-4 w-4",
-                    value === framework.value ? "opacity-100" : "opacity-0"
+                    value === item.value ? "opacity-100" : "opacity-0"
                   )}
                 />
-                {framework.label}
+                {item.label}
               </CommandItem>
             ))}
           </CommandGroup>

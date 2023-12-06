@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import './test.css'
+import './animations.css'
 import SidebarLayout1 from '@/components/sidebar-layouts/sidebar-layout-1'
 
 const inter = Inter({ subsets: ['latin'] })

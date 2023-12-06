@@ -2,7 +2,6 @@ import ModalTest from './contact/contact-modal';
 
 
 import "./contact/contact-modal.css"
-import "./animations.css"
 import { SimpleCompDisplay } from './simple-comp-display';
 import ModalTestAnimation from './contact/contact-modal-animation';
 
