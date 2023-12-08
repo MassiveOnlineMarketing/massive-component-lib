@@ -1,6 +1,14 @@
-import { SwipeProvider, SwipeContainer, SwipeNavigation, SwipeArrowNav, SwipeDots } from '@/features/swipe'
+'use client'
 
-export default function Page() {
+import React from 'react'
+import { SwipeProvider } from '@/features/swipe/SwipeContext'
+import { SwipeContainer } from '@/features/swipe/SwipeContainer'
+import { SwipeNavigation } from '@/features/swipe/SwipeNavigation'
+import { SwipeArrowNav } from '@/features/swipe/SwipeArrowNav'
+import { SwipeDots } from '@/features/swipe/SwipeDots'
+
+const TestComp = () => {
+
   const data = [
     {
       heading: 'Heading 1',
@@ -21,7 +29,7 @@ export default function Page() {
   ]
 
   return (
-    <div className='relative'>
+    <div>
         <SwipeProvider>
           <SwipeNavigation data={data}/>
           <SwipeContainer>
@@ -36,7 +44,7 @@ export default function Page() {
             ))}
           </SwipeContainer>
 
-          <SwipeArrowNav className='absolute top-1/2 w-full px-10'/>
+          <SwipeArrowNav/>
           <SwipeDots/>
 
 
@@ -44,3 +52,6 @@ export default function Page() {
     </div>
   )
 }
+
+
+export default TestComp
