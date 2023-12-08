@@ -7,7 +7,7 @@ import { MultiStepContactForm } from './contact-form';
 import useAnimatedVisibility from '../CUSTOMHOOKuseAnimatedVisibility';
 
 function ModalTestAnimation() {
-    const { isVisible, setIsVisible, shouldRender, animationClass } = useAnimatedVisibility({
+    const { setIsVisible, shouldRender, animationClass } = useAnimatedVisibility({
         initialIsVisible: false,
         animationDuration: 200,
         animationIn: 'element',
@@ -19,7 +19,6 @@ function ModalTestAnimation() {
             <button onClick={() => setIsVisible(true)}>Can I haz Modal?</button>
 
             {shouldRender && (
-                
                 // navbar height aan top toevoegen
                 <div className='absolute w-full h-full-minus-56 top-14 left-0 z-50'>
                     <div className={`flex h-full flex-col lg:flex-row ${animationClass} `}>
@@ -32,14 +31,8 @@ function ModalTestAnimation() {
                             </MultiStepContactForm>
                         </div>
                     </div>
-
                 </div>
-                
-
-
             )}
-
-            {/* {shouldRender && <div className={`modal-overlay state-${shouldRender ? 'show' : ''}`}></div>} */}
         </div>
     );
 }
