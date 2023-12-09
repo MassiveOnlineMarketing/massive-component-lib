@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { TabContent, TabTitle, TabsContext, TabIndicator } from './tabs';
 
-import AccordionContainer from '@/app/accordion/accordion-container';
+import AccordionContainer from '@/app/accordion/_test/accordion-container';
 
 interface TabsContainerProps {
     content: TabItems[];
@@ -41,7 +41,8 @@ const TabsContainer: React.FC<TabsContainerProps> = ({ content }) => {
             {content.map((item) => (
                 <TabContent key={item.id} id={item.id} className=" rounded-b-md bg-white color-black" >
                     {/* {item.content} */}
-                    <AccordionContainer content={item.content} />
+                    {/* <AccordionContainer content={item.content} /> */}
+                    <h1 className='text-black'> { item.id } </h1>
                 </TabContent>
             ))}
 

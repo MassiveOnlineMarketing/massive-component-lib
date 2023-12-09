@@ -1,4 +1,4 @@
-import { SwipeProvider, SwipeContainer, SwipeNavigation, SwipeArrowNav, SwipeDots } from '@/features/swipe'
+import { SwipeProvider, SwipeContent, SwipeNavigation, SwipeArrowNav, SwipeDots } from '@/features/swipe'
 
 export default function Page() {
   const data = [
@@ -24,7 +24,7 @@ export default function Page() {
     <div className='relative'>
         <SwipeProvider>
           <SwipeNavigation data={data}/>
-          <SwipeContainer>
+          <SwipeContent>
             {data.map((item, index) => (
               <div
                 key={index}
@@ -34,7 +34,7 @@ export default function Page() {
                 <h3 className='text-[12px] font-semibold'>{item.text}</h3>
               </div>
             ))}
-          </SwipeContainer>
+          </SwipeContent>
 
           <SwipeArrowNav className='absolute top-1/2 w-full px-10'/>
           <SwipeDots/>

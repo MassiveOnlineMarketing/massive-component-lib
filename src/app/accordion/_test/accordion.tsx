@@ -20,11 +20,11 @@ interface AccordionContextProps {
     padding: number;
 }
 
-interface AccordionProps {
+export interface AccordionProps {
     children: React.ReactNode;
-    isOpen: boolean;
-    onToggle: () => void;
-    padding: number;
+    isOpen?: boolean;
+    onToggle?: () => void;
+    padding?: number;
 }
 
 interface AccordionHeaderProps extends HeadingProps{
@@ -48,7 +48,7 @@ const AccordionContext = React.createContext<AccordionContextProps>({
 
 
 // Accordion
-const Accordion: React.FC<AccordionProps> = ({ children, isOpen, onToggle, padding }) => {
+const Accordion: React.FC<AccordionProps> = ({ children, isOpen = false, onToggle = () => {}, padding = 2 }) => {
     const value = { expand: isOpen, toggleExpand: onToggle, padding };
 
     return (
@@ -57,7 +57,6 @@ const Accordion: React.FC<AccordionProps> = ({ children, isOpen, onToggle, paddi
                 {children}
             </div>
         </AccordionContext.Provider>
-
     );
 };
 

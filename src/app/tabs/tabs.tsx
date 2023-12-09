@@ -54,7 +54,7 @@ const TabTitle: React.FC<TabTitleProps> = ({ children, id }) => {
         >
             {children}
         </div>
-    );
+    ); 
 };
 
 
@@ -79,7 +79,7 @@ const TabIndicator: React.FC<TabIndicatorProps> = ({ activeTab, tabWidth, gapSiz
 
     return (
         <div
-            className="hori-selector -z-10 "
+            className="hori-selector "
             style={{ left: `${leftPosition}px`, width: `${tabWidth}px` }}
         >
             <div className=" left " ></div>

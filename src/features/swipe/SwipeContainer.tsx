@@ -4,11 +4,11 @@ import React from 'react';
 import { useSwipeable } from 'react-swipeable';
 import { useSwipe } from './SwipeContext';
 
-interface SwipeContainerProps {
+interface SwipeContentProps {
   children: React.ReactNode;
 }
 
-const SwipeContainer: React.FC<SwipeContainerProps> = ({ children }) => {
+const SwipeContent: React.FC<SwipeContentProps> = ({ children }) => {
   const { activeIndex, itemsCount, setActiveIndex } = useSwipe();
 
   const handlers = useSwipeable({
@@ -31,4 +31,4 @@ const SwipeContainer: React.FC<SwipeContainerProps> = ({ children }) => {
   );
 };
 
-export { SwipeContainer };
+export { SwipeContent };

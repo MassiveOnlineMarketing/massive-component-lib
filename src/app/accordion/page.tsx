@@ -1,12 +1,21 @@
 import React from "react";
-import AccordionContainer from "./accordion-container";
+import AccordionContainer from "./_test/accordion-container";
+import { Accordion, AccordionContent, AccordionHeader } from "@/features/accordion";
 
 
 const Page: React.FC = () => {
 
     return (
         <div className="grid justify-center w-full pt-[100px] h-screen bg-white p-8 px-8 pb-8">
-            <AccordionContainer content={ACCORDION_DATA} />
+            {/* <AccordionContainer content={ACCORDION_DATA} /> */}
+            <AccordionContainer>
+                {ACCORDION_DATA.map((item, index) => (
+                    <Accordion key={index}>
+                        <AccordionHeader level='h3' size='xl' className="rounded-lg text-black" activeClassName='text-green-500'>{item.header}</AccordionHeader>
+                        <AccordionContent>{item.content}</AccordionContent>
+                    </Accordion>
+                ))}
+            </AccordionContainer>
         </div>
     )
 }
