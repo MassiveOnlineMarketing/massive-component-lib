@@ -16,7 +16,7 @@ module.exports = {
       md: "768px",
       lg: "1024px",
       xl: "1280px",
-      '2xl': "1536px",
+      '2xl': "1400px",
     },
     container: {
       center: true,
@@ -59,6 +59,9 @@ module.exports = {
         "modal-opacity-in": 'modalOpacityIn 0.5s ease forwards',
         "modal-opacity-out": 'modalOpacityOut 0.5s ease forwards',
       },
+      backgroundImage: theme => ({
+        'feature-4': "url('/bg-feature_4.jpg')",
+      })
     },
   },
   plugins: [
@@ -76,4 +79,5 @@ module.exports = {
     },
     require("tailwindcss-animate")
   ],
+  variants: {},
 }

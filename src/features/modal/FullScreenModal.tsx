@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react';
-import useAnimatedVisibility from '@/app/modal/CUSTOMHOOKuseAnimatedVisibility';
+import useAnimatedVisibility from '@/app/features/modal/CUSTOMHOOKuseAnimatedVisibility';
 import { Button } from '@/components/ui/button';
 import { XMarkIcon } from "@heroicons/react/24/outline";
 

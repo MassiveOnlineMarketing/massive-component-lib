@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react'
 
 import { UseFormRegister, FieldValues, DeepMap, FieldError } from 'react-hook-form';
 import { Heading } from '@/components/typography';
-import { CheckboxGroup, RadioGroup } from '@/app/modal/contact/contact-form';
+import { CheckboxGroup, RadioGroup } from '@/app/features/modal/contact/contact-form';
 
 // TypeScript types
 type WebDesignStepProps = {

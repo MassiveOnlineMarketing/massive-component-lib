@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { TabContent, TabTitle, TabsContext, TabIndicator } from './tabs';
 
-import AccordionContainer from '@/app/accordion/_test/accordion-container';
+import AccordionContainer from '@/app/features/accordion/_test/accordion-container';
 
 interface TabsContainerProps {
     content: TabItems[];

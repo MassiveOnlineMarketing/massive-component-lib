@@ -2,7 +2,7 @@
 
 import React from "react"
 import { useMediaQuery } from "react-responsive"
-import { AccordionProps } from "@/app/accordion/_test/accordion"
+import { AccordionProps } from "@/app/features/accordion/_test/accordion"
 
 export const AccordionContainer: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [openAccordion, setOpenAccordion] = React.useState<number | null>(null);

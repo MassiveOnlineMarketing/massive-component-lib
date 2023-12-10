@@ -8,7 +8,7 @@ import {
     // AccordionContent,
     // AccordionHeader,
     AccordionProps,
-} from "@/app/accordion/_test/accordion";
+} from "@/app/features/accordion/_test/accordion";
 
 // interface AccordionContainerProps {
 //     content: {

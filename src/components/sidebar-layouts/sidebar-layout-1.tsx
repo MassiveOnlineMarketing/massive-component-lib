@@ -18,14 +18,24 @@ import { MassiveLogoColor } from '@/assets/branding'
 import Link from 'next/link'
 
 const navigation = [
-    { name: 'Accordion', href: '/accordion', icon: HomeIcon, current: true },
-    { name: 'Tabs', href: '/tabs', icon: UsersIcon, current: false },
-    { name: 'Typography', href: '/typography', icon: FolderIcon, current: false },
-    { name: 'Form', href: '/form', icon: CalendarIcon, current: false },
-    { name: 'Modal', href: '/modal', icon: DocumentDuplicateIcon, current: false },
-    { name: 'Card', href: '/card', icon: ChartPieIcon, current: false },
-    { name: 'Page Breakpoints', href: '/breakpoints', icon: ChartPieIcon, current: false },
+    { name: 'features', href: '/features', icon: HomeIcon, current: true },
+    { name: 'accordion', href: '/features/accordion', icon: HomeIcon, current: false },
+    { name: 'modal', href: '/features/modal', icon: HomeIcon, current: false },
+    { name: 'swipe', href: '/features/swipe', icon: HomeIcon, current: false },
+    { name: 'tabs', href: '/features/tabs', icon: HomeIcon, current: false },
+
     { name: 'Layouts', href: '/layouts', icon: ChartPieIcon, current: false },
+    { name: 'Features', href: '/layouts/features', icon: ChartPieIcon, current: false },
+    
+
+    { name: 'Breakpoints', href: '/breakpoints', icon: FolderIcon, current: false },
+    { name: 'Card', href: '/card', icon: ChartPieIcon, current: false },
+    { name: 'Form', href: '/form', icon: CalendarIcon, current: false },
+    { name: 'Inputs', href: '/input', icon: CalendarIcon, current: false },
+    { name: 'Nav', href: '/nav', icon: CalendarIcon, current: false },
+    { name: 'Typography', href: '/typography', icon: FolderIcon, current: false },
+
+    { name: 'Test', href: '/test', icon: ChartPieIcon, current: false },
     // { name: 'Page Breakpoints', href: '/breakpoints', icon: ChartPieIcon, current: false },
     // { name: 'Page Breakpoints', href: '/breakpoints', icon: ChartPieIcon, current: false },
     // { name: 'Page Breakpoints', href: '/breakpoints', icon: ChartPieIcon, current: false },

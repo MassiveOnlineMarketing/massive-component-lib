@@ -11,9 +11,9 @@ import { z } from 'zod';
 
 import { formSchema } from '@/lib/data-schema/form';
 import { submitForm } from '@/lib/actions/submit-form';
-import { WebDesignStep } from '../modal/contact/WebDesignStep';
+import { WebDesignStep } from '../features/modal/contact/WebDesignStep';
 import { Button } from '@/components/ui/button';
-import { ContactStap } from '../modal/contact/Contact';
+import { ContactStap } from '../features/modal/contact/Contact';
 import { cn } from "@/lib/utils"
 
 type Inputs = z.infer<typeof formSchema>;
