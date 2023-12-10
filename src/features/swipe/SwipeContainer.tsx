@@ -13,10 +13,10 @@ const SwipeContent: React.FC<SwipeContentProps> = ({ children }) => {
 
   const handlers = useSwipeable({
     onSwipedLeft: () => {
-      setActiveIndex(prev => (prev + 1) % itemsCount); //@ ts-ignore
+      setActiveIndex(prev => (prev + 1) % itemsCount);
     },
     onSwipedRight: () => {
-      setActiveIndex(prev => (prev - 1 + itemsCount) % itemsCount); //@ ts-ignore
+      setActiveIndex(prev => (prev - 1 + itemsCount) % itemsCount);
     }
   });
 

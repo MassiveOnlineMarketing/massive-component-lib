@@ -5,7 +5,7 @@ import React, { createContext, useState } from 'react';
 type SwipeContextType = {
   activeIndex: number;
   itemsCount: number;
-  setActiveIndex: (index: number) => void;
+  setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
 };
 
 interface SwipeProviderProps {

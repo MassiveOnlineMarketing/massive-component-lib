@@ -18,7 +18,7 @@ const SwipeArrowNav: React.FC<SwipeArrowNavProps> = ({ className }) => {
       className
     )}>
       <button
-        onClick={() => setActiveIndex(prev => (prev > 0 ? prev - 1 : 0))} //@ ts-ignore
+        onClick={() => setActiveIndex((prev) => (prev > 0 ? prev - 1 : 0))}
         disabled={activeIndex === 0}
         aria-label="Previous item"
         role="button"
@@ -28,7 +28,7 @@ const SwipeArrowNav: React.FC<SwipeArrowNavProps> = ({ className }) => {
       </button>
 
       <button
-        onClick={() => setActiveIndex(prev => (prev < itemsCount - 1 ? prev + 1 : itemsCount - 1))} //@ ts-ignore
+        onClick={() => setActiveIndex(prev => (prev < itemsCount - 1 ? prev + 1 : itemsCount - 1))}
         disabled={activeIndex === itemsCount - 1}
         aria-label="Next item"
         role="button"
