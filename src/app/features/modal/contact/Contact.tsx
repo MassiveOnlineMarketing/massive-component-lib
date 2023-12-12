@@ -4,6 +4,7 @@ import React from 'react'
 import { Heading } from '@/components/typography'
 import { DeepMap, FieldValues, UseFormRegister, FieldError } from 'react-hook-form'
 import { Slider } from '@/components/ui/slider'
+import { InputField, Textarea } from '@/components/input/fields'
 
 type ContactStap = {
     register: UseFormRegister<FieldValues>;
@@ -20,22 +21,22 @@ return (
             <div className='flex justify-between'>
                 <p>zsm</p><p className='ml-14'>6 maanden</p><p>12 maanden</p>
             </div>
-            <input type="range" min="0" max="12" className='w-full accent-purple-500'  {...register('tijdlijn')} />
+            <input type="range" min="0" max="12" className='w-full accent-primary'  {...register('tijdlijn')} />
 
 
             <Heading level='h3' size='base' colorScheme='donker' className='mt-6'>Budget</Heading>
             <div className='flex justify-between'>
                 <p>€0</p><p className='ml-8'>€15.000</p><p>€30.000</p>
             </div>
-            <input type="range" min="1" max="30000" className='w-full accent-purple-500' {...register('budget')} />
+            <input type="range" min="1" max="30000" className='w-full accent-primary' {...register('budget')} />
 
 
             <Heading level='h3' size='base' colorScheme='donker' className='mt-6'>Naam</Heading>
-            <input
-                className='inline-flex w-full mt-3 justify-between  py-4 px-8 rounded-xl border border-gray-200'
-                placeholder="Uw naam..."
+            <InputField
+                type='text'
+                placeholder='Uw naam...'
                 required
-                {...register("name")}
+                {...register('name')}
             />
             {errors.name?.message && (
                 // use the message from the hook
@@ -43,32 +44,28 @@ return (
             )}
 
             <Heading level='h3' size='base' colorScheme='donker' className='mt-6'>Email</Heading>
-            <input
-                className='inline-flex w-full mt-3 justify-between  py-4 px-8 rounded-xl border border-gray-200'
-                placeholder="Uw email..."
+            <InputField
                 type='email'
+                placeholder='Uw email...'
                 required
-                {...register("email")}
+                {...register('email')}
             />
             {errors.email?.message && (
                 <p className='text-red-500'>{errors.email.message}</p>
             )}
 
             <Heading level='h3' size='base' colorScheme='donker' className='mt-6'>Website</Heading>
-            <input
-                className='inline-flex w-full mt-3 justify-between  py-4 px-8 rounded-xl border border-gray-200'
-                placeholder="Uw website url..."
+            <InputField
+                type='text'
+                placeholder='Uw website url...'
                 defaultValue={websiteURL || ''}
-                {...register("websiteURL")}
+                {...register('websiteURL')}
             />
-            <label className='flex flex-col rounded-xl border border-gray-200 mt-3'>
-                <textarea
-                    className='py-2 px-6 rounded-xl border-8 border-white'
-                    placeholder="Uw bericht..."
-                    rows={3}
-                    {...register("message")}
-                />
-            </label>
+            <Textarea
+                placeholder='Uw bericht...'
+                rows={3}
+                {...register('message')}
+            />
             {errors.message?.message && (
                 <p className='text-red-500'>{errors.message.message}</p>
             )}

@@ -10,6 +10,7 @@ import Image from 'next/image';
 import { Paragraph, SubHeading, Heading } from '@/components/typography';
 import { AcademicCapIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import { Card } from '@/components/card';
+import { MultiStepContactForm } from './contact/contact-form';
 
 export default function Page() {
 
@@ -17,7 +18,7 @@ export default function Page() {
         // <div className="flex flex-col justify-center items-center h-[1000px] bg-white text-black">
         <div>
             <ModalFullScreen buttonText='Full screen modal' className='ml-10' animationDuration={1000} animationIn='element' animationOut='element-out'>
-                <ResponsiveContainer className="my-10">
+                {/* <ResponsiveContainer className="my-10">
                     <FlexContainer className="flex-row-reverse">
                         <Image src="/test-img.png" alt="Picture of the author" width={800} height={700} />
                         <div className="bg-green-500 w-full flex flex-col gap-8 md:max-w-[500px]">
@@ -44,7 +45,8 @@ export default function Page() {
                             <Paragraph size='base' colorScheme='default' >Verhoog uw positie in Google door uw content te optimaliseren voor relevante zoekwoorden.  </Paragraph>
                         </Card>
                     </ResponsiveGridContainer>
-                </ResponsiveContainer>
+                </ResponsiveContainer> */}
+                <MultiStepContactForm />
             </ModalFullScreen>
 
 

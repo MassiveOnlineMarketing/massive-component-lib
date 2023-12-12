@@ -21,17 +21,17 @@ import { Button } from '@/components/ui/button';
 // form steps
 import { WebDesignStep } from './WebDesignStep';
 import { ContactStap } from './Contact';
-import { Textarea } from '@/components/input/fields';
+import { CheckField, TestInput, Textarea } from '@/components/input/fields';
 
 type Inputs = z.infer<typeof formSchema>;
 
 type MultiStepContactForm = {
     className?: string,
-    children: React.ReactNode,
+    // children: React.ReactNode,
     // handleClose: () => void // add back to props
 }
 
-export const MultiStepContactForm: React.FC<MultiStepContactForm> = ({ className, children }) => {
+export const MultiStepContactForm: React.FC<MultiStepContactForm> = ({ className }) => {
     // set state data
     const [data, setData] = useState<Inputs>();
 
@@ -150,8 +150,8 @@ export const MultiStepContactForm: React.FC<MultiStepContactForm> = ({ className
             'h-full w-full'
         )}>
             <div className='flex gap-6 mb-auto'>
-                <Button variant='outline' className=' ml-auto' onClick={skipToContactDetails}><EnvelopeIcon className='h-5 w-5' />Direct contact</Button>
-                {children}
+                <Button variant='outline' className=' md:ml-auto mr-16' onClick={skipToContactDetails}><EnvelopeIcon className='h-5 w-5' />Direct contact</Button>
+                {/* {children} */}
             </div>
 
             <form
@@ -164,8 +164,18 @@ export const MultiStepContactForm: React.FC<MultiStepContactForm> = ({ className
                     <>
                         <p className='font-semibold text-[#4B5563]'>1/3</p>
                         <Heading level='h3' size='xl' colorScheme='accent' className='mb-8'>In welke Dienst bent u geïnteresseerd?</Heading>
-                        <RadioGroup data={DIENSTEN_OPTIES} register={register} registerType="dienst" />
-                        <p>{errors.dienst?.message}</p>
+                        {/* <RadioGroup data={DIENSTEN_OPTIES} register={register} registerType="dienst" /> */}
+                        <div className='flex flex-col gap-3'>
+                            {DIENSTEN_OPTIES.map((option, index) => (
+                                <TestInput
+                                    key={index} 
+                                    type='radio'
+                                    label={option.option}
+                                    value={option.option}
+                                    {...register('dienst')}
+                                />
+                            ))}
+                        </div>
                         <Button type='button' size='lg' variant='primary' className='w-full mt-12' onClick={nextStep}>Volgende</Button>
                     </>
                 }

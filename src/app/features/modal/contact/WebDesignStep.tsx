@@ -6,6 +6,7 @@ import React, { useState, useEffect } from 'react'
 import { UseFormRegister, FieldValues, DeepMap, FieldError } from 'react-hook-form';
 import { Heading } from '@/components/typography';
 import { CheckboxGroup, RadioGroup } from '@/app/features/modal/contact/contact-form';
+import { InputField, TestInput, Textarea } from '@/components/input/fields';
 
 // TypeScript types
 type WebDesignStepProps = {
@@ -32,30 +33,46 @@ export const WebDesignStep: React.FC<WebDesignStepProps> = ({ register, watch, e
     return (
         <>
             <Heading level='h4' size='base' colorScheme='donker'>Heeft U al een website?</Heading>
-            <RadioGroup data={HEEFT_WEBSITE} register={register} registerType="heeftWebsite" className='mt-3' />
-            {watch('heeftWebsite') === 'Ja' && (
-                <label className='flex flex-col rounded-xl border border-gray-200 mt-3'>
-                    <textarea
-                        className=' py-2 px-6 rounded-xl border-8 border-white'
-                        placeholder="Uw website url..."
-                        rows={1}
-                        {...register('websiteURL')}
+            {/* <RadioGroup data={HEEFT_WEBSITE} register={register} registerType="heeftWebsite" className='mt-3' /> */}
+            <div className='flex flex-col gap-3 mt-3'>
+                {HEEFT_WEBSITE.map((item, index) => (
+                    <TestInput 
+                        key={index}
+                        type='radio'
+                        label={item.option}
+                        value={item.option}
+                        {...register('heeftWebsite')}
                     />
-                </label>
+                ))}
+            </div>
+            {watch('heeftWebsite') === 'Ja' && (
+                <InputField 
+                    type='text'
+                    placeholder='Uw website url...'
+                    {...register('websiteURL')}
+                />
             )}
             <p>{errors.heeftWebsite?.message}</p>
 
+
             <Heading level='h4' size='base' colorScheme='donker' className='mt-6'>Naar welke functionaliteit bent u op zoek?</Heading>
-            <CheckboxGroup data={WEBSITE_FUNCTIONALITEIT} register={register} registerType="websiteFunctionaliteit" className='mt-3' />
-            {showOtherReasonWebFunctionality && (
-                <label className='flex flex-col rounded-xl border border-gray-200 mt-3 '>
-                    <textarea
-                        className=' py-2 px-6 rounded-xl border-8 border-white'
-                        placeholder="Gelieve te specificeren..."
-                        rows={2}
-                        {...register('otherReasonWebsiteFunctionaliteit')}
+            <div className='flex flex-col gap-3 mt-3'>
+                {WEBSITE_FUNCTIONALITEIT.map((item, index) => (
+                    <TestInput
+                        key={index}
+                        type='checkbox'
+                        label={item.option}
+                        value={item.option}
+                        {...register('websiteFunctionaliteit')}    
                     />
-                </label>
+                ))}
+            </div>
+            {showOtherReasonWebFunctionality && (
+                <Textarea 
+                    rows={2}
+                    placeholder='Gelieve te specificeren...'
+                    {...register('otherReasonWebsiteFunctionaliteit')}
+                />
             )}
             <p>{errors.websiteURL?.message}</p>
         </>

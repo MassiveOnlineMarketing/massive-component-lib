@@ -1,18 +1,19 @@
 
 import React from "react";
 import { cn } from "@/lib/utils";
+import { UseFormRegister } from 'react-hook-form';
 
 export interface InputFieldProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
-    className?: string;
-    label?: string;
-  }
+  className?: string;
+  label?: string;
+}
 
 export interface TextareaProps
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
-    className?: string;
-    label?: string;
-  }
+  className?: string;
+  label?: string;
+}
 
 export interface CheckFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
@@ -20,9 +21,14 @@ export interface CheckFieldProps extends React.InputHTMLAttributes<HTMLInputElem
 }
 
 
+interface TestFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  label?: string;
+  className?: string;
+}
+
 
 const InputField = React.forwardRef<HTMLInputElement, InputFieldProps>(
-  ({className, label,  ...props}, ref) => {
+  ({ className, label, ...props }, ref) => {
     return (
       <input
         ref={ref}
@@ -39,7 +45,7 @@ InputField.displayName = "InputField";
 
 
 const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({className, label,  ...props}, ref) => {
+  ({ className, label, ...props }, ref) => {
     return (
       <textarea
         ref={ref}
@@ -57,14 +63,14 @@ Textarea.displayName = "Textarea";
 
 
 const CheckField = React.forwardRef<HTMLInputElement, CheckFieldProps>(
-  ({className, label, value, name,  ...props}, ref) => {
+  ({ className, label, value, name, ...props }, ref) => {
     return (
       <label className={cn(
         'inline-flex justify-between  py-4 px-8 rounded-xl border border-gray-200 w-full',
         'hover:bg-gray-50',
-        className 
+        className
       )}>
-        <p>{ label }</p>
+        <p>{label}</p>
         <CheckInput {...props} value={value} name={name} />
       </label>
     );
@@ -75,7 +81,7 @@ CheckField.displayName = "CheckField";
 
 
 const CheckInput = React.forwardRef<HTMLInputElement, InputFieldProps>(
-  ({value, name, ...props}, ref) => {
+  ({ value, name, ...props }, ref) => {
     return (
       <input
         ref={ref}
@@ -91,4 +97,27 @@ const CheckInput = React.forwardRef<HTMLInputElement, InputFieldProps>(
 );
 CheckInput.displayName = "CheckInput";
 
-export { InputField, Textarea, CheckField, CheckInput };  
+
+const TestInput = React.forwardRef<HTMLInputElement, TestFieldProps>(
+  ({ className, label, value, ...props }, ref) => {
+    return (
+      <label className={cn(
+        'inline-flex justify-between  py-4 px-8 rounded-xl border border-gray-200 w-full',
+        'hover:bg-gray-50',
+        className
+      )}>
+        <p>{label}</p>
+        <input
+          ref={ref}
+          className={cn(
+            "h-4 w-4 my-auto rounded border-gray-300 accent-primary focus:accent-primary",
+          )}
+          value={value}
+          {...props}
+        />
+      </label>
+    );
+  }
+);
+TestInput.displayName = "TestInput";
+export { InputField, Textarea, CheckField, CheckInput, TestInput };  
