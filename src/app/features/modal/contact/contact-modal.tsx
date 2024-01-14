@@ -3,7 +3,7 @@
 import { Button } from '@/components/ui/button';
 import React, { useState } from 'react';
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import { MultiStepContactForm } from './contact-form';
+import { MultiStepContactForm } from '../contact-form-massive/contact-form';
 
 function ModalTest() {
     const [isOpen, setIsOpen] = useState(false);

@@ -11,9 +11,9 @@ import { z } from 'zod';
 
 import { formSchema } from '@/lib/data-schema/form';
 import { submitForm } from '@/lib/actions/submit-form';
-import { WebDesignStep } from '../features/modal/contact/WebDesignStep';
+import { WebDesignStep } from '../features/modal/contact-form-massive/WebDesign';
 import { Button } from '@/components/ui/button';
-import { ContactStap } from '../features/modal/contact/Contact';
+import { ContactStep } from '../features/modal/contact-form-massive/Contact';
 import { cn } from "@/lib/utils"
 
 type Inputs = z.infer<typeof formSchema>;
@@ -209,7 +209,7 @@ export const ReactHookFormZod: React.FC<ReactHookFormZod> = ({ className, childr
                 {/* STEP THREE */}
                 {currentStep === "contactDetails" &&
                     <>
-                        <ContactStap register={register} watch={watch} errors={errors} websiteURL={websiteURL || ''}/>
+                        <ContactStep register={register} watch={watch} errors={errors} websiteURL={websiteURL || ''}/>
                         <div className='inline-flex gap-6'>
                             <Button type='button' className="px-12 py-3 rounded-md" variant='outline' onClick={prevStep}>Terug</Button>
                             <Button type='submit' disabled={isSubmitting}  className="w-full py-3 rounded-md" variant='primary'>Versturen</Button>

@@ -3,7 +3,6 @@
 import React from 'react'
 import { Heading } from '@/components/typography'
 import { DeepMap, FieldValues, UseFormRegister, FieldError } from 'react-hook-form'
-import { Slider } from '@/components/ui/slider'
 import { InputField, Textarea } from '@/components/input/fields'
 
 type ContactStap = {
@@ -13,7 +12,7 @@ type ContactStap = {
     websiteURL?: string;
 };
 
-export const ContactStap: React.FC<ContactStap> = ({ register, watch, errors, websiteURL }) => {
+export const ContactStep: React.FC<ContactStap> = ({ register, watch, errors, websiteURL }) => {
 
 return (
     <>
@@ -24,7 +23,7 @@ return (
             <input type="range" min="0" max="12" className='w-full accent-primary'  {...register('tijdlijn')} />
 
 
-            <Heading level='h3' size='base' colorScheme='donker' className='mt-6'>Budget</Heading>
+            <Heading level='h3' size='base' colorScheme='donker' className='mt-6'>Uw budget</Heading>
             <div className='flex justify-between'>
                 <p>€0</p><p className='ml-8'>€15.000</p><p>€30.000</p>
             </div>

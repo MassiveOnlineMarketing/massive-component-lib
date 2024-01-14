@@ -3,19 +3,12 @@
 
 import React, { useState, useEffect } from 'react'
 
-import { UseFormRegister, FieldValues, DeepMap, FieldError } from 'react-hook-form';
 import { Heading } from '@/components/typography';
-import { CheckboxGroup, RadioGroup } from '@/app/features/modal/contact/contact-form';
 import { InputField, TestInput, Textarea } from '@/components/input/fields';
+import { MultiStepContactFormChildProps } from './contact-form';
 
-// TypeScript types
-type WebDesignStepProps = {
-    register: UseFormRegister<FieldValues>;
-    watch: (fieldName: string) => any;
-    errors: DeepMap<FieldValues, FieldError>;
-};
 
-export const WebDesignStep: React.FC<WebDesignStepProps> = ({ register, watch, errors }) => {
+export const WebDesignStep: React.FC<MultiStepContactFormChildProps> = ({ register, watch, errors }) => {
 
     
     // Use for showing the other reason textarea

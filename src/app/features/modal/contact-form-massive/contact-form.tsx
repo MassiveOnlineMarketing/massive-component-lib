@@ -4,11 +4,12 @@ import React, { useState, useEffect } from 'react'
 
 // form validation
 import { useForm, SubmitHandler } from "react-hook-form";
+import { UseFormRegister, FieldValues, DeepMap, FieldError } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { formSchema } from '@/lib/data-schema/form';
 
-import { EnvelopeIcon } from "@heroicons/react/24/solid";
+import { EnvelopeIcon } from "@heroicons/react/24/outline";
 
 // actions
 import { submitForm } from '@/lib/actions/submit-form';
@@ -19,19 +20,28 @@ import { Heading } from '@/components/typography'
 import { Button } from '@/components/ui/button';
 
 // form steps
-import { WebDesignStep } from './WebDesignStep';
-import { ContactStap } from './Contact';
-import { CheckField, TestInput, Textarea } from '@/components/input/fields';
+import { WebDesignStep } from './WebDesign';
+import { ContactStep } from './Contact';
+import { TestInput} from '@/components/input/fields';
+import { EcommerceStep } from './Ecommerce';
+import { SEOStep } from './SEO';
+import { SEAStep } from './SEA';
+import { StrategieStep } from './Strategie';
 
 type Inputs = z.infer<typeof formSchema>;
 
 type MultiStepContactForm = {
     className?: string,
-    // children: React.ReactNode,
-    // handleClose: () => void // add back to props
+    children?: React.ReactNode
 }
 
-export const MultiStepContactForm: React.FC<MultiStepContactForm> = ({ className }) => {
+export type MultiStepContactFormChildProps = {
+    register: UseFormRegister<FieldValues>;
+    watch: (fieldName: string) => any;
+    errors: DeepMap<FieldValues, FieldError>;
+};
+
+export const MultiStepContactForm: React.FC<MultiStepContactForm> = ({ className, children }) => {
     // set state data
     const [data, setData] = useState<Inputs>();
 
@@ -92,7 +102,7 @@ export const MultiStepContactForm: React.FC<MultiStepContactForm> = ({ className
                 break;
             case "Web Design & Development":
             case "eCommerce en Webwinkel oplossingen":
-            case "SEO (Zoekmachineoptimalizatie":
+            case "SEO (Zoekmachineoptimalizatie)":
             case "Advertentie beheer":
             case "Online strategie ontwikkeling":
             case "Geen van de bovenstaande":
@@ -144,7 +154,6 @@ export const MultiStepContactForm: React.FC<MultiStepContactForm> = ({ className
 
 
     return (
-
         <div className={cn(
             className,
             'h-full w-full'
@@ -158,7 +167,6 @@ export const MultiStepContactForm: React.FC<MultiStepContactForm> = ({ className
                 onSubmit={handleSubmit(processForm)}
                 className=' max-w-[440px] mx-auto lg:mr-0 lg:ml-[15%]'
             >
-
                 {/* STEP ONE */}
                 {currentStep === "step1" &&
                     <>
@@ -196,32 +204,58 @@ export const MultiStepContactForm: React.FC<MultiStepContactForm> = ({ className
 
                 {/* ECOMM STEP TWO */}
                 {currentStep === "eCommerce en Webwinkel oplossingen" &&
-                    <p>eCommerce en Webwinkel oplossingen</p>
+                <>
+                    <p className='font-semibold text-[#4B5563]'>2/3</p>
+                    <Heading level='h3' size='xl' colorScheme='accent' className='mb-8'>Webwinkel</Heading>
+                    <EcommerceStep register={register} watch={watch} errors={errors} />
+                    <div className='inline-flex gap-6 mt-12 w-full'>
+                        <Button type='button' variant='outline' className="px-12 py-3" onClick={prevStep}>Terug</Button>
+                        <Button type='button' variant='primary' className="w-full py-3" onClick={nextStep}>Volgende</Button>
+                    </div>
+                </>
                 }
 
 
                 {/* SEO STEP TWO */}
                 {currentStep === "SEO (Zoekmachineoptimalizatie)" &&
-                    <p>SEO Zoekmachineoptimalizatie</p>
+                <>
+                    <p className='font-semibold text-[#4B5563]'>2/3</p>
+                    <Heading level='h3' size='xl' colorScheme='accent' className='mb-8'>Zoekmachine optimalizatie</Heading>
+                    <SEOStep register={register} watch={watch} errors={errors} />
+                    <div className='inline-flex gap-6 mt-12 w-full'>
+                        <Button type='button' variant='outline' className="px-12 py-3" onClick={prevStep}>Terug</Button>
+                        <Button type='button' variant='primary' className="w-full py-3" onClick={nextStep}>Volgende</Button>
+                    </div>
+                </>
                 }
-
-
 
 
                 {/* SEA STEP TWO */}
                 {currentStep === "Advertentie beheer" &&
-                    <p>Advertentie beheer</p>
+                <>
+                    <p className='font-semibold text-[#4B5563]'>2/3</p>
+                    <Heading level='h3' size='xl' colorScheme='accent' className='mb-8'>Advertentiebeheer</Heading>
+                    <SEAStep register={register} watch={watch} errors={errors} />
+                    <div className='inline-flex gap-6 mt-12 w-full'>
+                        <Button type='button' variant='outline' className="px-12 py-3" onClick={prevStep}>Terug</Button>
+                        <Button type='button' variant='primary' className="w-full py-3" onClick={nextStep}>Volgende</Button>
+                    </div>
+                </>
                 }
-
-
 
 
                 {/* STRATEGY STEP TWO */}
                 {currentStep === "Online strategie ontwikkeling" &&
-                    <p>Online strategie ontwikkeling</p>
+                <>
+                    <p className='font-semibold text-[#4B5563]'>2/3</p>
+                    <Heading level='h3' size='xl' colorScheme='accent' className='mb-8'>Online strategie ontwikkeling</Heading>
+                    <StrategieStep register={register} watch={watch} errors={errors} />
+                    <div className='inline-flex gap-6 mt-12 w-full'>
+                        <Button type='button' variant='outline' className="px-12 py-3" onClick={prevStep}>Terug</Button>
+                        <Button type='button' variant='primary' className="w-full py-3" onClick={nextStep}>Volgende</Button>
+                    </div>
+                </>
                 }
-
-
 
 
                 {/* STEP THREE */}
@@ -229,7 +263,7 @@ export const MultiStepContactForm: React.FC<MultiStepContactForm> = ({ className
                     <>
                         <p className='font-semibold text-[#4B5563]'>3/3</p>
                         <Heading level='h3' size='xl' colorScheme='accent' className='mb-8'>Contact Gegevens</Heading>
-                        <ContactStap register={register} watch={watch} errors={errors} websiteURL={websiteURL || ''}/>
+                        <ContactStep register={register} watch={watch} errors={errors} websiteURL={websiteURL || ''}/>
                         <div className='inline-flex gap-6 mt-12 w-full'>
                             <Button type='button' variant='outline' className="px-12 py-3" onClick={prevStep}>Terug</Button>
                             <Button type='submit' variant='primary' className="w-full py-3" disabled={isSubmitting} >Versturen</Button>
@@ -237,10 +271,7 @@ export const MultiStepContactForm: React.FC<MultiStepContactForm> = ({ className
                     </>
                 }
 
-
             </form>
-
-
 
             <div className=''>
                 <pre>
@@ -262,57 +293,3 @@ const DIENSTEN_OPTIES = [
     { option: 'Online strategie ontwikkeling' }, 
     { option: 'Geen van de bovenstaande' }
 ]
-
-
-
-
-
-
-
-
-
-
-
-type RadioGroupProps = {
-    data: { option: string }[],
-    register: ReturnType<typeof useForm>['register'], 
-    registerType: string,
-    className?: string
-}
-
-export const RadioGroup = ({ data, register, registerType, className }: RadioGroupProps) => {
-
-    return (
-        <div className={cn('flex flex-col gap-3', className)}>
-            {data.map((option, index) => (
-                <label key={index} className='inline-flex justify-between  py-4 px-8 rounded-xl border border-gray-200'>
-                    <p>{option.option}</p>
-                    <input className='h-4 w-4 my-auto rounded border-gray-300 accent-purple-500 focus:accent-purple-500' 
-                        type="radio" value={option.option} {...register(registerType)}/>
-                </label>
-            ))}
-        </div>
-    )
-}
-
-type CheckboxGroupProps = {
-    data: { option: string }[],
-    register: ReturnType<typeof useForm>['register'], 
-    registerType: string,
-    className?: string
-}
-
-export const CheckboxGroup = ({ data, register, registerType, className }: CheckboxGroupProps) => {
-    
-        return (
-            <div className={cn('flex flex-col gap-3', className)}>
-                {data.map((option, index) => (
-                    <label key={index} className='inline-flex justify-between  py-4 px-8 rounded-xl border border-gray-200'>
-                        <p>{option.option}</p>
-                        <input className='h-4 w-4 my-auto rounded border-gray-300 accent-purple-500 focus:accent-purple-500' 
-                            type="checkbox" value={option.option} {...register(registerType)}/>
-                    </label>
-                ))}
-            </div>
-        )
-    }

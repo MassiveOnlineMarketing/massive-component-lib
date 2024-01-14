@@ -10,7 +10,7 @@ import Image from 'next/image';
 import { Paragraph, SubHeading, Heading } from '@/components/typography';
 import { AcademicCapIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import { Card } from '@/components/card';
-import { MultiStepContactForm } from './contact/contact-form';
+import { MultiStepContactForm } from './contact-form-massive/contact-form';
 
 export default function Page() {
 
