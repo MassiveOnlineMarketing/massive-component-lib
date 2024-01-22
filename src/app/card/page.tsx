@@ -56,7 +56,7 @@ export default function Page() {
                 {/* <StackedCardViewer indices={[1, 2, 3]} initialIndex={1} cards={cards} /> */}
             </div>
 
-            <div className="flex justify-center items-center">
+            <div >
                 <CardAnimation />
             </div>
 
