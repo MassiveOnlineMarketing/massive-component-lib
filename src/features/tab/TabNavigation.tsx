@@ -30,6 +30,28 @@ const TabTitle: React.FC<TabTitleProps> = ({ children, id }) => {
   ); 
 };
 
+const TabTitleV2: React.FC<TabTitleProps> = ({ children, id }) => {
+  const { activeTab, setActiveTab, updateTabWidth } = useTab();
+  const tabRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (tabRef.current) {
+      updateTabWidth(id, tabRef.current.offsetWidth);
+    }
+  }, [id]);
+  
+
+  return (
+      <div
+          ref={tabRef}
+          className={`cursor-pointer px-4 ${activeTab === id ? 'text-primary' : ''}`}
+          onClick={() => setActiveTab(id)}
+      >
+          {children}
+      </div>
+  ); 
+};
+
 
 
 const TabIndicator = ({ gapSize }: {gapSize: number}) => {
@@ -52,6 +74,26 @@ const TabIndicator = ({ gapSize }: {gapSize: number}) => {
   );
 };
 
+
+const TabIndicatorAnimated = ({ gapSize }: {gapSize: number}) => {
+  const { tabWidths, activeTab } = useTab();
+
+  let leftPosition = gapSize * (activeTab - 1);
+  for (let i = 0; i < activeTab - 1; i++) {
+    leftPosition += tabWidths[i] || 0;
+  }
+
+
+  return (
+      <div
+          className="inline-block absolute h-full left-0 transition-all duration-200 ease-in-out border-b border-primary"
+          style={{ left: `${leftPosition}px`, width: `${tabWidths[activeTab - 1] || 0}px` }}
+      >
+      </div>
+  );
+};
+
+
 const TabIndicatorLine = ({ gapSize }: {gapSize: number}) => {
   const { tabWidths, activeTab } = useTab();
 
@@ -70,4 +112,4 @@ const TabIndicatorLine = ({ gapSize }: {gapSize: number}) => {
 };
 
 
-export { TabTitle, TabIndicator, TabIndicatorLine };
+export { TabTitle, TabTitleV2, TabIndicator, TabIndicatorAnimated, TabIndicatorLine };

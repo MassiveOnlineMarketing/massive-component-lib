@@ -21,11 +21,24 @@ export const TabsContext = createContext<TabsContextProps>({
   updateTabWidth: () => {}, // Placeholder function
 });
 
+/**
+ * TabContainer component that provides a context for managing tabs.
+ *
+ * @component
+ * @param {TabContainerProps} props - The props for the TabContainer component.
+ * @param {React.ReactNode} props.children - The content of the TabContainer.
+ * @returns {JSX.Element} The rendered TabContainer component.
+ */
 export const TabContainer: React.FC<TabContainerProps> = ({ children }) => {
   const [activeTab, setActiveTab] = useState<number>(1);
   const [tabWidths, setTabWidths] = useState<number[]>([]); // State to store widths of all tabs
 
-  // Function to update the width of a specific tab
+  /**
+   * Function to update the width of a specific tab.
+   *
+   * @param {number} index - The index of the tab.
+   * @param {number} width - The width of the tab.
+   */
   const updateTabWidth = (index: number, width: number) => {
     setTabWidths(prevWidths => {
       const newWidths = [...prevWidths];

@@ -88,7 +88,7 @@ const CardAnimation = () => {
 
   const handlers = useSwipeable({
     onSwipedLeft: () => {
-      setClicked(prev => (prev < 3 ? prev + 1 : prev));
+      setClicked(prev => (prev < 2 ? prev + 1 : prev));
       if (clicked < 3) {
         animateCard(clicked + 1);
       }
@@ -113,13 +113,13 @@ const CardAnimation = () => {
               {clicked === index ? <PaarBol /> : <GrijsBol />}
               <h2 className={`text-lg font-medium leading-7 ${clicked === index ? 'text-gray-800' : 'text-gray-500'}`}>title</h2>
               <div className={cn(
-                `absolute w-[1.5px] h-full  left-[8.5px] `,
-                `${clicked === index ? 'bg-[#7857FF]' : 'bg-gray-300'}`,
-                `${index === 0 ? 'h-1/2 bottom-0' : 'top-0'}`,
-                `${index === 2 ? 'h-2/3 top-0' : 'bottom-0'}`,
-                { 'h-full': index === 2 && clicked === 2 }
-                
-              )}></div>
+                  `absolute w-[1.5px] h-full  left-[8.5px] `,
+                  `${clicked === index ? 'bg-[#7857FF]' : 'bg-gray-300'}`,
+                  `${index === 0 ? 'h-1/2 bottom-0' : 'top-0'}`,
+                  `${index === 2 ? 'h-2/3 top-0' : 'bottom-0'}`,
+                  { 'h-full': index === 2 && clicked === 2 }
+                )}>
+              </div>
             </div>
 
             <div

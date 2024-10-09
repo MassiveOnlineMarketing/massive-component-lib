@@ -3,25 +3,26 @@ import TabsContainer from "./_test/tabs-container";
 
 import "./tabs.css"
 import { TabContainer, TabContent, TabIndicator, TabTitle, TabIndicatorLine } from "@/features/tab";
+import { TabIndicatorAnimated, TabTitleV2 } from "@/features/tab/TabNavigation";
 
 
 const Page: React.FC = () => {
 
     return (
-        <div className="grid justify-center w-full pt-[100px] bg-black text-white h-screen">
+        <div className="grid justify-center w-full pt-[100px] h-screen text-black">
             {/* <TabsContainer content={TABS_DATA} /> */}
             {/* <p>test</p> */}
             <div >
                 <TabContainer> 
-                    <div className="flex relative gap-4 overflow-hidden">
-                        <TabTitle id={1}>Tab nummer 1</TabTitle>
-                        <TabTitle id={2}>Tab 2s</TabTitle>
-                        <TabTitle id={3}>Ta 3</TabTitle>
-                        <TabTitle id={4}>Laatste tab in de tabs</TabTitle>
-                        <TabIndicator gapSize={16} />
+                    <div className="flex relative gap-4 overflow-hidden  mb-4">
+                        <TabTitleV2 id={1}>Tab nummer 1</TabTitleV2>
+                        <TabTitleV2 id={2}>Tab 2s</TabTitleV2>
+                        <TabTitleV2 id={3}>Ta 3</TabTitleV2>
+                        <TabTitleV2 id={4}>Laatste tab in de tabs</TabTitleV2>
+                        <TabIndicatorAnimated gapSize={12} />
                     </div>
 
-                    <div className="bg-white text-black">
+                    <div className="bg-white text-black border-green-500 border">
                         <TabContent id={1}> <h1>Tab 1</h1> </TabContent>
                         <TabContent id={2}> <h1>Tab 2</h1> </TabContent>
                         <TabContent id={3}> <h1>Tab 3</h1> </TabContent>
